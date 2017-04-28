@@ -74,3 +74,6 @@ gulp.task('dev', [
   gulp.watch('*.html', browserSync.reload);
   gulp.watch('js/**/*.js', browserSync.reload);
 });
+
+// Build task
+gulp.task('build', [ 'less', 'minify-css', 'minify-js' ]);
