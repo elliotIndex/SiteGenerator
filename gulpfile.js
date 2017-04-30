@@ -17,8 +17,27 @@ var banner = [
   ''
 ].join('');
 
+
+// Fill out HTML template with text
+gulp.task('template-html', function () {
+  return gulp.src('./templates/index.html.mustache')
+    .pipe(mustache('./text/practicalGuide.json'))
+    .pipe(rename({extname: ''}))
+    .pipe(browserSync.reload({stream: true}))
+    .pipe(gulp.dest('./dist/'));
+});
+
+// Fill out CSS variables template with text
+gulp.task('template-less', function () {
+  return gulp.src('./templates/variables.less.mustache')
+    .pipe(mustache('./text/practicalGuide.json'))
+    .pipe(rename({extname: ''}))
+    .pipe(browserSync.reload({stream: true}))
+    .pipe(gulp.dest('less'));
+});
+
 // Compile LESS files from /less into /css
-gulp.task('less', function() {
+gulp.task('less', ['template-less'], function() {
   return gulp.src('less/creative.less')
     .pipe(less())
     .pipe(header(banner, {pkg: pkg}))
@@ -43,15 +62,6 @@ gulp.task('minify-js', function() {
     .pipe(browserSync.reload({stream: true}))
     .pipe(gulp.dest('./dist/'));
 });
-
-// Fill out HTML template-html with text
-gulp.task('template-html', function () {
-  return gulp.src('./html/template.mustache')
-    .pipe(mustache('./text/practicalGuide.json'))
-    .pipe(rename({basename: 'index', extname: ".html"}))
-    .pipe(browserSync.reload({stream: true}))
-    .pipe(gulp.dest('./dist/'));
-})
 
 // Copy vendor libraries from /node_modules into dist/vendor
 gulp.task('copy', function() {
@@ -83,7 +93,7 @@ gulp.task('copy', function() {
 })
 
 // Build dist folder
-gulp.task('build', ['less', 'template-html', 'minify-css', 'minify-js', 'copy']);
+gulp.task('build', ['template-less', 'less', 'template-html', 'minify-css', 'minify-js', 'copy']);
 
 // Configure the browserSync task
 gulp.task('browserSync', function() {
@@ -101,7 +111,7 @@ gulp.task('dev', [
   gulp.watch('less/*.less', ['less']);
   gulp.watch('css/*.css', ['minify-css']);
   gulp.watch('js/*.js', ['minify-js']);
-  gulp.watch('html/*.mustache', ['template-html']);
+  gulp.watch('templates/*.mustache', ['template-html']);
   // Reloads the browser whenever HTML or JS files change
   gulp.watch('dist/*.html', browserSync.reload);
   gulp.watch('dist/*.css', browserSync.reload);
