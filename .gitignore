@@ -2,3 +2,4 @@ node_modules
 bower_components
 css/creative.min.css
 js/creative.min.js
+dist
