@@ -76,6 +76,10 @@ gulp.task('copy', function() {
     '!node_modules/font-awesome/*.json'
   ])
     .pipe(gulp.dest('dist/vendor/font-awesome'))
+
+
+  gulp.src(['img/**/*.jpg'])
+    .pipe(gulp.dest('dist/img'))
 })
 
 // Build dist folder
