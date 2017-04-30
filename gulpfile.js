@@ -5,7 +5,7 @@ var header = require('gulp-header');
 var cleanCSS = require('gulp-clean-css');
 var rename = require('gulp-rename');
 var uglify = require('gulp-uglify');
-var mustache = require('gulp-mustache')
+var mustache = require('gulp-mustache');
 var pkg = require('./package.json');
 
 // Set the banner content
@@ -105,14 +105,14 @@ gulp.task('browserSync', function() {
 })
 
 // Dev task with browserSync
-gulp.task('dev', [
-  'browserSync', 'build'
-], function() {
+gulp.task('dev', [ 'browserSync', 'build' ], function() {
+  gulp.watch('text/*.json', ['template-html', 'minify-css']);
+  gulp.watch('templates/index.html.mustache', ['template-html']);
+  gulp.watch('templates/variables.less.mustache', ['template-less']);
   gulp.watch('less/*.less', ['less']);
   gulp.watch('css/*.css', ['minify-css']);
   gulp.watch('js/*.js', ['minify-js']);
-  gulp.watch('templates/*.mustache', ['template-html']);
-  // Reloads the browser whenever HTML or JS files change
+  // Reloads the browser whenever HTML, JS, or CSS files change
   gulp.watch('dist/*.html', browserSync.reload);
   gulp.watch('dist/*.css', browserSync.reload);
   gulp.watch('dist/*.js', browserSync.reload);
