@@ -1,5 +1,4 @@
 node_modules
-bower_components
 css
 less/variables.less
 js/creative.min.js
