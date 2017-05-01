@@ -1,27 +1,23 @@
-# [Start Bootstrap](http://startbootstrap.com/) - [Creative](http://startbootstrap.com/template-overviews/creative/)
+# Easy Site
+The simplest website generator since 2017
 
-[Creative](http://startbootstrap.com/template-overviews/creative/) is a one page creative theme for [Bootstrap](http://getbootstrap.com/) created by [Start Bootstrap](http://startbootstrap.com/).
+## Making a site
+To make a simple one-page site, go to [www.EasySiteGenerator.com](http://www.EasySiteGenerator.com)
+and follow the directions there.
 
 ## Getting Started
+To develop with this repository, clone the repo to your local machine and install the dependencies
+with `npm install`.
 
-To begin using this template, choose one of the following options to get started:
-* [Download the latest release on Start Bootstrap](http://startbootstrap.com/template-overviews/creative/)
-* Clone the repo: `git clone https://github.com/BlackrockDigital/startbootstrap-creative.git`
-* Fork the repo
+To build a website, run `gulp build` and navigate to http://localhost:3000.
 
-## Bugs and Issues
+## Development
+To run a development server with live reloading, run `gulp dev`. This will watch for changes in the
+JS, HTML, and LESS files, rebuild the `dist` directory, and reload the page in your browser.
 
-Have a bug or an issue with this template? [Open a new issue](https://github.com/BlackrockDigital/startbootstrap-creative/issues) here on GitHub or leave a comment on the [template overview page at Start Bootstrap](http://startbootstrap.com/template-overviews/creative/).
+## Contribution
+To contribute to Easy Site, make a pull request with an explanation of your changes.
 
-## Creator
-
-Start Bootstrap was created by and is maintained by **[David Miller](http://davidmiller.io/)**, Owner of [Blackrock Digital](http://blackrockdigital.io/).
-
-* https://twitter.com/davidmillerskt
-* https://github.com/davidtmiller
-
-Start Bootstrap is based on the [Bootstrap](http://getbootstrap.com/) framework created by [Mark Otto](https://twitter.com/mdo) and [Jacob Thorton](https://twitter.com/fat).
-
-## Copyright and License
-
-Copyright 2013-2016 Blackrock Digital LLC. Code released under the [MIT](https://github.com/BlackrockDigital/startbootstrap-creative/blob/gh-pages/LICENSE) license.
+## Philosophy
+Easy site is built to simplify website generation as much as possible. As such, changes should
+favor simplicity over flexibility.

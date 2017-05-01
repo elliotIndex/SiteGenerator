@@ -1,12 +1,12 @@
 module.exports = {
   "theme-color": "#4286f4",
-  "tab-title": "Practical Guide to Getting Hired",
+  "tab-title": "Tab Title",
   "header": {
-    "title": "By Elliot Plant"
+    "title": "Header Title"
   },
   "main": {
-    "title": "The Practical Guide to Getting Hired",
-    "subtitle": "The fastest, most straightforward, easy to follow, guide to finding a job. I wish I had known about this when I graduated college",
+    "title": "Main Title",
+    "subtitle": "This is the main subtitle. It could have a few words or it could have many words! It's all up to you, the page creator.",
     "button": "Main Button",
     "button-link": "http://www.google.com"
   },
