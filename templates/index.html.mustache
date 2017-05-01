@@ -40,9 +40,9 @@
     <div class="container-fluid">
       <!-- Brand and toggle get grouped for better mobile display -->
       <div class="navbar-header">
-        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                    <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
-                </button>
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"  data-target="#bs-example-navbar-collapse-1">
+            <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
+        </button>
         <a class="navbar-brand page-scroll" href="#page-top">{{ header.title }}</a>
       </div>
 
@@ -61,9 +61,9 @@
             <li> <a class="page-scroll" href="#section-3">{{ section-3.header-link }}</a> </li>
           {{/section-3.header-link}}
 
-          {{#section-4.header-link}}
-            <li> <a class="page-scroll" href="#section-4">{{ section-4.header-link }}</a> </li>
-          {{/section-4.header-link}}
+          {{#section-5.header-link}}
+            <li> <a class="page-scroll" href="#section-5">{{ section-5.header-link }}</a> </li>
+          {{/section-5.header-link}}
         </ul>
       </div>
       <!-- /.navbar-collapse -->
@@ -78,7 +78,7 @@
           <h1 id="homeHeading">{{ title }}</h1>
           <hr>
           <p>{{ subtitle }}</p>
-          <a href="#section-1" class="btn btn-primary btn-xl page-scroll">{{ button }}</a>
+          <a href="{{{ button-link }}}" class="btn btn-primary btn-xl page-scroll">{{ button }}</a>
         </div>
       </div>
     </header>
@@ -92,7 +92,7 @@
           <h2 class="section-heading">{{ title }}</h2>
           <hr class="light">
           <p class="text-faded">{{ text }}</p>
-          <a href="{{ button-destination }}" class="page-scroll btn btn-default btn-xl sr-button">
+          <a href="{{ button-link }}" class="page-scroll btn btn-default btn-xl sr-button">
             {{ button }}
           </a>
         </div>
@@ -106,24 +106,15 @@
     <div class="container">
       <div class="row">
         <div class="col-lg-12 text-center">
-          <h2 class="section-heading">{{ title}}</h2>
+          <h2 class="section-heading">{{ title }}</h2>
           <hr class="primary">
         </div>
       </div>
     </div>
     <div class="container">
       <div class="row">
-        {{#blob-1}}
-        <div class="col-lg-3 col-md-6 text-center">
-          <div class="service-box">
-            <i class="fa fa-4x fa-{{ icon }} text-primary sr-icons"></i>
-            <h3>{{ title }}</h3>
-            <p class="text-muted">{{ text }}</p>
-          </div>
-        </div>
-        {{/blob-1}}
 
-        {{#blob-2}}
+        {{#blobs}}
         <div class="col-lg-3 col-md-6 text-center">
           <div class="service-box">
             <i class="fa fa-4x fa-{{ icon }} text-primary sr-icons"></i>
@@ -131,157 +122,77 @@
             <p class="text-muted">{{ text }}</p>
           </div>
         </div>
-        {{/blob-2}}
+        {{/blobs}}
 
-        {{#blob-3}}
-        <div class="col-lg-3 col-md-6 text-center">
-          <div class="service-box">
-            <i class="fa fa-4x fa-{{ icon }} text-primary sr-icons"></i>
-            <h3>{{ title }}</h3>
-            <p class="text-muted">{{ text }}</p>
-          </div>
-        </div>
-        {{/blob-3}}
-
-        {{#blob-4}}
-        <div class="col-lg-3 col-md-6 text-center">
-          <div class="service-box">
-            <i class="fa fa-4x fa-{{ icon }} text-primary sr-icons"></i>
-            <h3>{{ title }}</h3>
-            <p class="text-muted">{{ text }}</p>
-          </div>
-        </div>
-        {{/blob-4}}
       </div>
     </div>
   </section>
   {{/section-2}}
 
+  {{#section-3}}
   <section class="no-padding" id="section-3">
     <div class="container-fluid">
       <div class="row no-gutter popup-gallery">
+
+        {{#blobs}}
         <div class="col-lg-4 col-sm-6">
-          <a href="img/portfolio/fullsize/1.jpg" class="portfolio-box">
-            <img src="img/portfolio/thumbnails/1.jpg" class="img-responsive" alt="">
+          <a href="{{{ link }}}" class="portfolio-box">
+            <img src="{{{ img }}}" class="img-responsive" alt="">
             <div class="portfolio-box-caption">
               <div class="portfolio-box-caption-content">
                 <div class="project-category text-faded">
-                  Category
+                  {{ title }}
                 </div>
                 <div class="project-name">
-                  Project Name
+                  {{ subtitle }}
                 </div>
               </div>
             </div>
           </a>
         </div>
-        <div class="col-lg-4 col-sm-6">
-          <a href="img/portfolio/fullsize/2.jpg" class="portfolio-box">
-            <img src="img/portfolio/thumbnails/2.jpg" class="img-responsive" alt="">
-            <div class="portfolio-box-caption">
-              <div class="portfolio-box-caption-content">
-                <div class="project-category text-faded">
-                  Category
-                </div>
-                <div class="project-name">
-                  Project Name
-                </div>
-              </div>
-            </div>
-          </a>
-        </div>
-        <div class="col-lg-4 col-sm-6">
-          <a href="img/portfolio/fullsize/3.jpg" class="portfolio-box">
-            <img src="img/portfolio/thumbnails/3.jpg" class="img-responsive" alt="">
-            <div class="portfolio-box-caption">
-              <div class="portfolio-box-caption-content">
-                <div class="project-category text-faded">
-                  Category
-                </div>
-                <div class="project-name">
-                  Project Name
-                </div>
-              </div>
-            </div>
-          </a>
-        </div>
-        <div class="col-lg-4 col-sm-6">
-          <a href="img/portfolio/fullsize/4.jpg" class="portfolio-box">
-            <img src="img/portfolio/thumbnails/4.jpg" class="img-responsive" alt="">
-            <div class="portfolio-box-caption">
-              <div class="portfolio-box-caption-content">
-                <div class="project-category text-faded">
-                  Category
-                </div>
-                <div class="project-name">
-                  Project Name
-                </div>
-              </div>
-            </div>
-          </a>
-        </div>
-        <div class="col-lg-4 col-sm-6">
-          <a href="img/portfolio/fullsize/5.jpg" class="portfolio-box">
-            <img src="img/portfolio/thumbnails/5.jpg" class="img-responsive" alt="">
-            <div class="portfolio-box-caption">
-              <div class="portfolio-box-caption-content">
-                <div class="project-category text-faded">
-                  Category
-                </div>
-                <div class="project-name">
-                  Project Name
-                </div>
-              </div>
-            </div>
-          </a>
-        </div>
-        <div class="col-lg-4 col-sm-6">
-          <a href="img/portfolio/fullsize/6.jpg" class="portfolio-box">
-            <img src="img/portfolio/thumbnails/6.jpg" class="img-responsive" alt="">
-            <div class="portfolio-box-caption">
-              <div class="portfolio-box-caption-content">
-                <div class="project-category text-faded">
-                  Category
-                </div>
-                <div class="project-name">
-                  Project Name
-                </div>
-              </div>
-            </div>
-          </a>
-        </div>
+        {{/blobs}}
+
       </div>
     </div>
   </section>
+  {{/section-3}}
 
+  {{#section-4}}
   <aside class="bg-dark">
     <div class="container text-center">
       <div class="call-to-action">
-        <h2>Free Download at Start Bootstrap!</h2>
-        <a href="http://startbootstrap.com/template-overviews/creative/" class="btn btn-default btn-xl sr-button">Download Now!</a>
+        <h2>{{ title }}</h2>
+        {{#button}}
+        <a href="{{{ link }}}" class="btn btn-default btn-xl sr-button">
+          {{ text }}
+        </a>
+        {{/button}}
       </div>
     </div>
   </aside>
+  {{/section-4}}
 
-  <section id="section-4">
+  {{#section-5}}
+  <section id="section-5">
     <div class="container">
       <div class="row">
-        <div class="col-lg-8 col-lg-offset-2 text-center">
-          <h2 class="section-heading">Let's Get In Touch!</h2>
+        <div class="center-block text-center">
+          <h2 class="section-heading"> {{ title }}</h2>
           <hr class="primary">
-          <p>Ready to start your next project with us? That's great! Give us a call or send us an email and we will get back to you as soon as possible!</p>
+          <p>{{ subtitle }}</p>
         </div>
-        <div class="col-lg-4 col-lg-offset-2 text-center">
-          <i class="fa fa-phone fa-3x sr-contact"></i>
-          <p>123-456-6789</p>
-        </div>
+
+        {{#contacts}}
         <div class="col-lg-4 text-center">
-          <i class="fa fa-envelope-o fa-3x sr-contact"></i>
-          <p><a href="mailto:your-email@your-domain.com">feedback@startbootstrap.com</a></p>
+          <i class="fa fa-{{ icon }} fa-3x sr-contact"></i>
+          <p>{{{ text }}}</p>
         </div>
+        {{/contacts}}
+
       </div>
     </div>
   </section>
+  {{/section-5}}
 
   <!-- jQuery -->
   <script src="vendor/jquery/jquery.min.js"></script>

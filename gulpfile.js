@@ -7,6 +7,7 @@ var rename = require('gulp-rename');
 var uglify = require('gulp-uglify');
 var mustache = require('gulp-mustache');
 var pkg = require('./package.json');
+var templateGuide = require('./text/practicalGuide.js');
 
 // Set the banner content
 var banner = [
@@ -21,7 +22,7 @@ var banner = [
 // Fill out HTML template with text
 gulp.task('template-html', function () {
   return gulp.src('./templates/index.html.mustache')
-    .pipe(mustache('./text/practicalGuide.json'))
+    .pipe(mustache(templateGuide))
     .pipe(rename({extname: ''}))
     .pipe(browserSync.reload({stream: true}))
     .pipe(gulp.dest('./dist/'));
@@ -30,7 +31,7 @@ gulp.task('template-html', function () {
 // Fill out CSS variables template with text
 gulp.task('template-less', function () {
   return gulp.src('./templates/variables.less.mustache')
-    .pipe(mustache('./text/practicalGuide.json'))
+    .pipe(mustache(templateGuide))
     .pipe(rename({extname: ''}))
     .pipe(browserSync.reload({stream: true}))
     .pipe(gulp.dest('less'));
