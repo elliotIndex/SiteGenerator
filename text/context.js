@@ -45,7 +45,7 @@ module.exports = {
   },
   "section-3": {
     "title": "Section 3 Title",
-    "header-link": "Section 2 link",
+    "header-link": "Section 3 link",
     "blobs": [
       {
         title: "Section 3 Blob title 1",
