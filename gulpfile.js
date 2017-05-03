@@ -12,8 +12,8 @@ var pkg = require('./package.json');
 var templateGuide = require('./text/editable.js');
 
 // Fill out HTML template with text
-gulp.task('template-html', function () {
-  return gulp.src('./templates/index.html.mustache')
+gulp.task('template-html', function() {
+  return gulp.src('./templates/template.html.mustache')
     .pipe(mustache(templateGuide))
     .pipe(rename({extname: ''}))
     .pipe(browserSync.reload({stream: true}))
@@ -21,7 +21,7 @@ gulp.task('template-html', function () {
 });
 
 // Fill out CSS variables template with text
-gulp.task('template-less', function () {
+gulp.task('template-less', function() {
   return gulp.src('./templates/variables.less.mustache')
     .pipe(mustache(templateGuide))
     .pipe(rename({extname: ''}))
@@ -56,10 +56,18 @@ gulp.task('minify-js', function() {
 
 // Copy vendor libraries from /node_modules into dist/vendor
 gulp.task('copy', function() {
-  gulp.src(['node_modules/bootstrap/dist/**/*', '!**/npm.js', '!**/bootstrap-theme.*', '!**/*.map'])
+  gulp.src([
+    'node_modules/bootstrap/dist/**/*',
+    '!**/npm.js',
+    '!**/bootstrap-theme.*',
+    '!**/*.map'
+  ])
     .pipe(gulp.dest('dist/vendor/bootstrap'))
 
-  gulp.src(['node_modules/jquery/dist/jquery.js', 'node_modules/jquery/dist/jquery.min.js'])
+  gulp.src([
+    'node_modules/jquery/dist/jquery.js',
+    'node_modules/jquery/dist/jquery.min.js'
+  ])
     .pipe(gulp.dest('dist/vendor/jquery'))
 
   gulp.src(['node_modules/magnific-popup/dist/*'])
@@ -78,13 +86,25 @@ gulp.task('copy', function() {
   ])
     .pipe(gulp.dest('dist/vendor/font-awesome'))
 
-
+  // move images to dist folder
   gulp.src(['img/**/*.jpg'])
     .pipe(gulp.dest('dist/img'))
+
+  // move wrapper html file to dist
+  gulp.src(['wrapper/wrapper.html'])
+    .pipe(rename({basename: 'index'}))
+    .pipe(gulp.dest('dist'))
 })
 
 // Build dist folder
-gulp.task('build', ['template-less', 'less', 'template-html', 'minify-css', 'minify-js', 'copy']);
+gulp.task('build', [
+  'template-less',
+  'less',
+  'template-html',
+  'minify-css',
+  'minify-js',
+  'copy'
+]);
 
 // Configure the browserSync task
 gulp.task('browserSync', function() {
@@ -96,7 +116,9 @@ gulp.task('browserSync', function() {
 })
 
 // Dev task with browserSync
-gulp.task('dev', [ 'browserSync', 'build' ], function() {
+gulp.task('dev', [
+  'browserSync', 'build'
+], function() {
   gulp.watch('text/*.json', ['template-html', 'minify-css']);
   gulp.watch('templates/index.html.mustache', ['template-html']);
   gulp.watch('templates/variables.less.mustache', ['template-less']);
