@@ -1,5 +1,5 @@
 module.exports = {
-  "theme-color": "#4286f4",
+  "theme-color": "#125689",
   "tab-title": "Practical Guide to Getting Hired",
   "header": {
     "title": "By Elliot Plant"
@@ -7,7 +7,7 @@ module.exports = {
   "main": {
     "title": "The Practical Guide to Getting Hired",
     "subtitle": "The fastest, most straightforward, easy to follow, guide to finding a job. I wish I had known about this when I graduated college",
-    "button": "Main Button",
+    "button": "Buy it on Amazon",
     "button-link": "http://www.google.com"
   },
   "section-1": {

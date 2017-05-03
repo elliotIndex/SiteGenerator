@@ -43,26 +43,44 @@
         <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"  data-target="#bs-example-navbar-collapse-1">
             <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
         </button>
-        <a class="navbar-brand page-scroll" href="#page-top">{{ header.title }}</a>
+        <a class="navbar-brand page-scroll" href="#page-top" contenteditable="{{ editable }}">
+          {{ header.title }}
+        </a>
       </div>
 
       <!-- Collect the nav links, forms, and other content for toggling -->
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav navbar-right">
           {{#section-1.header-link}}
-            <li> <a class="page-scroll" href="#section-1">{{ section-1.header-link }}</a> </li>
+            <li>
+              <a class="page-scroll" href="#section-1" contenteditable="{{ editable }}">
+                {{ section-1.header-link }}
+              </a>
+           </li>
           {{/section-1.header-link}}
 
           {{#section-2.header-link}}
-            <li> <a class="page-scroll" href="#section-2">{{ section-2.header-link }}</a> </li>
+            <li>
+              <a class="page-scroll" href="#section-2" contenteditable="{{ editable }}">
+                {{ section-2.header-link }}
+              </a>
+            </li>
           {{/section-2.header-link}}
 
           {{#section-3.header-link}}
-            <li> <a class="page-scroll" href="#section-3">{{ section-3.header-link }}</a> </li>
+            <li>
+              <a class="page-scroll" href="#section-3" contenteditable="{{ editable }}">
+                {{ section-3.header-link }}
+              </a>
+            </li>
           {{/section-3.header-link}}
 
           {{#section-5.header-link}}
-            <li> <a class="page-scroll" href="#section-5">{{ section-5.header-link }}</a> </li>
+            <li>
+              <a class="page-scroll" href="#section-5" contenteditable="{{ editable }}">
+                {{ section-5.header-link }}
+              </a>
+            </li>
           {{/section-5.header-link}}
         </ul>
       </div>
@@ -75,10 +93,12 @@
     <header>
       <div class="header-content">
         <div class="header-content-inner">
-          <h1 id="homeHeading">{{ title }}</h1>
+          <h1 id="homeHeading" contenteditable="{{ editable }}">{{ title }}</h1>
           <hr>
-          <p>{{ subtitle }}</p>
-          <a href="{{{ button-link }}}" class="btn btn-primary btn-xl page-scroll">{{ button }}</a>
+          <p contenteditable="{{ editable }}">{{ subtitle }}</p>
+          <a href="{{{ button-link }}}" class="btn btn-primary btn-xl page-scroll" contenteditable="{{ editable }}">
+            {{ button }}
+          </a>
         </div>
       </div>
     </header>
@@ -89,10 +109,10 @@
     <div class="container">
       <div class="row">
         <div class="col-lg-8 col-lg-offset-2 text-center">
-          <h2 class="section-heading">{{ title }}</h2>
+          <h2 class="section-heading" contenteditable="{{ editable }}">{{ title }}</h2>
           <hr class="light">
-          <p class="text-faded">{{ text }}</p>
-          <a href="{{ button-link }}" class="page-scroll btn btn-default btn-xl sr-button">
+          <p class="text-faded" contenteditable="{{ editable }}">{{ text }}</p>
+          <a href="{{ button-link }}" class="page-scroll btn btn-default btn-xl sr-button" contenteditable="{{ editable }}">
             {{ button }}
           </a>
         </div>
@@ -106,7 +126,7 @@
     <div class="container">
       <div class="row">
         <div class="col-lg-12 text-center">
-          <h2 class="section-heading">{{ title }}</h2>
+          <h2 class="section-heading" contenteditable="{{ editable }}">{{ title }}</h2>
           <hr class="primary">
         </div>
       </div>
@@ -118,8 +138,8 @@
         <div class="col-lg-3 col-md-6 text-center">
           <div class="service-box">
             <i class="fa fa-4x fa-{{ icon }} text-primary sr-icons"></i>
-            <h3>{{ title }}</h3>
-            <p class="text-muted">{{ text }}</p>
+            <h3 contenteditable="{{ editable }}">{{ title }}</h3>
+            <p class="text-muted" contenteditable="{{ editable }}">{{ text }}</p>
           </div>
         </div>
         {{/blobs}}
@@ -140,10 +160,10 @@
             <img src="{{{ img }}}" class="img-responsive" alt="">
             <div class="portfolio-box-caption">
               <div class="portfolio-box-caption-content">
-                <div class="project-category text-faded">
+                <div class="project-category text-faded" contenteditable="{{ editable }}">
                   {{ title }}
                 </div>
-                <div class="project-name">
+                <div class="project-name" contenteditable="{{ editable }}">
                   {{ subtitle }}
                 </div>
               </div>
@@ -161,9 +181,9 @@
   <aside class="bg-dark">
     <div class="container text-center">
       <div class="call-to-action">
-        <h2>{{ title }}</h2>
+        <h2 contenteditable="{{ editable }}">{{ title }}</h2>
         {{#button}}
-        <a href="{{{ link }}}" class="btn btn-default btn-xl sr-button">
+        <a href="{{{ link }}}" class="btn btn-default btn-xl sr-button" contenteditable="{{ editable }}">
           {{ text }}
         </a>
         {{/button}}
@@ -177,15 +197,15 @@
     <div class="container">
       <div class="row">
         <div class="center-block text-center">
-          <h2 class="section-heading"> {{ title }}</h2>
+          <h2 class="section-heading" contenteditable="{{ editable }}"> {{ title }}</h2>
           <hr class="primary">
-          <p>{{ subtitle }}</p>
+          <p contenteditable="{{ editable }}">{{ subtitle }}</p>
         </div>
 
         {{#contacts}}
         <div class="col-lg-4 text-center">
           <i class="fa fa-{{ icon }} fa-3x sr-contact"></i>
-          <p>{{{ text }}}</p>
+          <p contenteditable="{{ editable }}">{{{ text }}}</p>
         </div>
         {{/contacts}}
 

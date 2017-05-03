@@ -7,7 +7,9 @@ var rename = require('gulp-rename');
 var uglify = require('gulp-uglify');
 var mustache = require('gulp-mustache');
 var pkg = require('./package.json');
-var templateGuide = require('./text/context.js');
+// var templateGuide = require('./text/context.js');
+// var templateGuide = require('./text/practicalGuide.js');
+var templateGuide = require('./text/editable.js');
 
 // Fill out HTML template with text
 gulp.task('template-html', function () {

@@ -2,7 +2,7 @@
 The simplest website generator since 2017
 
 ## Making a site
-To make a simple one-page site, go to [www.EasySiteGenerator.com](http://www.EasySiteGenerator.com)
+To make a simple one-page site, go to [www.SiteGenerator.org](http://www.SiteGenerator.org)
 and follow the directions there.
 
 ## Getting Started
