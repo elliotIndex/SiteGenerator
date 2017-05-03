@@ -29,8 +29,16 @@ gulp.task('template-less', function() {
     .pipe(gulp.dest('less'));
 });
 
+// Create less for wrapper
+gulp.task('wrapper-less', function () {
+  return gulp.src('./less/wrapper.less')
+    .pipe(less())
+    .pipe(gulp.dest('dist'))
+    .pipe(browserSync.reload({stream: true}));
+})
+
 // Compile LESS files from /less into /css
-gulp.task('less', ['template-less'], function() {
+gulp.task('less', ['template-less', 'wrapper-less'], function() {
   return gulp.src('less/creative.less')
     .pipe(less())
     .pipe(gulp.dest('css'))

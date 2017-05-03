@@ -1,0 +1,35 @@
+@theme-primary: #4286f4;
+@header-height: 40px;
+
+.fixed-top {
+  height: 40px;
+  position: fixed;
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  overflow: hidden;
+  background: grey;
+}
+
+.wrapper-nav {
+  height: @header-height;
+}
+
+.template-container {
+  height: ~"calc(100% - 40px)";
+  padding: 10px;
+}
+
+.template {
+  border: 0;
+  height: 100%;
+  width: 100%;
+}
+
+.template.mobile {
+  max-height: 667px;
+  width: 375px;
+}
