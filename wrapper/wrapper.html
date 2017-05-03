@@ -17,9 +17,15 @@
 </head>
 
 <body id="page-top">
-
+  <script>
+    function mobilize() {
+      console.log("togging");
+      document.querySelector('.template').classList.toggle('mobile');
+    }
+  </script>
   <nav class="wrapper-nav">
     Some header nav stuff goes here
+    <button onclick="mobilize()">Mobilize!</button>
   </nav>
 
   <div class="template-container">
