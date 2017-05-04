@@ -26,23 +26,20 @@ module.exports = {
         "title": "Section 2, Blob 1 title",
         "icon": "diamond",
         "text": "Section 2 blob 1 text goes here. This could be fun! The icon above comes from fa-icons"
-      },
-      {
+      }, {
         "title": "Section 2, Blob 2 title",
         "icon": "paper-plane",
         "text": "Section 2 blob 2 text goes here. This could be fun! The icon above comes from fa-icons"
-      },
-      {
+      }, {
         "title": "Section 2, Blob 3 title",
         "icon": "newspaper-o",
         "text": "Section 2 blob 3 text goes here. This could be fun! The icon above comes from fa-icons"
-      },
-      {
+      }, {
         "title": "Section 2, Blob 4 title",
         "icon": "heart",
         "text": "Section 2 blob 4 text goes here. This could be fun! The icon above comes from fa-icons"
       }
-    ],
+    ]
   },
   "section-3": {
     "title": "Section 3 Title",
@@ -53,14 +50,12 @@ module.exports = {
         subtitle: "Section 3 blob subtitle",
         link: "http://www.google.com",
         img: "http://www.lifewithcats.tv/wp-content/uploads/2016/07/comfy-kitty.jpeg"
-      },
-      {
+      }, {
         title: "Section 3 Blob 2",
         subtitle: "The background is the blob img",
         link: "http://www.google.com",
         img: "http://www.azula.com/wp-content/uploads/2017/03/ElephantSeal.jpg"
-      },
-      {
+      }, {
         title: "Blob 3",
         subtitle: "The destination link is the blob link",
         link: "http://www.google.com",
@@ -83,12 +78,10 @@ module.exports = {
       {
         icon: "phone",
         text: "(218) 330-8004"
-      },
-      {
+      }, {
         icon: "envelope",
         text: "elliotaplant@gmail.com"
-      },
-      {
+      }, {
         icon: "globe",
         text: "www.yourwebsite.com"
       }

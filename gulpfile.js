@@ -7,23 +7,23 @@ var rename = require('gulp-rename');
 var uglify = require('gulp-uglify');
 var mustache = require('gulp-mustache');
 var pkg = require('./package.json');
-// var templateGuide = require('./text/context.js');
-// var templateGuide = require('./text/practicalGuide.js');
-var templateGuide = require('./text/editable.js');
+// var pageData = require('./page-data/context.js');
+// var pageData = require('./page-data/practicalGuide.js');
+var pageData = require('./page-data/editable.js');
 
-// Fill out HTML template with text
+// Fill out HTML template with page-data
 gulp.task('template-html', function() {
   return gulp.src('./templates/template.html.mustache')
-    .pipe(mustache(templateGuide))
+    .pipe(mustache(pageData))
     .pipe(rename({extname: ''}))
     .pipe(browserSync.reload({stream: true}))
     .pipe(gulp.dest('./dist/'));
 });
 
-// Fill out CSS variables template with text
+// Fill out CSS variables template with page-data
 gulp.task('template-less', function() {
   return gulp.src('./templates/variables.less.mustache')
-    .pipe(mustache(templateGuide))
+    .pipe(mustache(pageData))
     .pipe(rename({extname: ''}))
     .pipe(browserSync.reload({stream: true}))
     .pipe(gulp.dest('less'));

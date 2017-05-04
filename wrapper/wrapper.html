@@ -17,22 +17,6 @@
 </head>
 
 <body id="page-top">
-  <script>
-    function mobilize() {
-      console.log('togging');
-      document.querySelector('.template').classList.toggle('mobile');
-    }
-    function save() {
-      console.log('saving');
-      var iframe = document.getElementById('template-frame');
-      var innerDoc = iframe.contentDocument || iframe.contentWindow.document;
-      var selectables = Array.from(innerDoc.getElementsByClassName('selectable')).map(selectable => ({
-        path: selectable.dataset.templatePath,
-        text: selectable.textContent.trim()
-      }));
-      console.log('selectables', selectables);
-    }
-  </script>
   <nav class="wrapper-nav">
     Some header nav stuff goes here
     <button onclick="mobilize()">Mobilize</button>
@@ -47,6 +31,26 @@
       </p>
     </iframe>
   </div>
+
+  <!-- jQuery -->
+  <script src="vendor/jquery/jquery.min.js"></script>
+
+  <script>
+    function mobilize() {
+      console.log('togging');
+      document.querySelector('.template').classList.toggle('mobile');
+    }
+    function save() {
+      console.log('saving');
+      var iframe = $('#template-frame');
+      var innerDoc = iframe.contents()
+      var selectables = Array.from(innerDoc.find('[data-template-path]')).map(selectable => ({
+        path: selectable.dataset.templatePath,
+        text: selectable.textContent.trim()
+      }));
+      console.log('selectables', selectables);
+    }
+  </script>
 </body>
 
 </html>
