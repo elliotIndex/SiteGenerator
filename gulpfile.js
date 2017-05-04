@@ -62,8 +62,15 @@ gulp.task('minify-js', function() {
     .pipe(gulp.dest('./dist/'));
 });
 
+gulp.task('copy-wrapper', function () {
+  // move wrapper html file to dist
+  return gulp.src(['wrapper/wrapper.html'])
+    .pipe(rename({basename: 'index'}))
+    .pipe(gulp.dest('dist'));
+});
+
 // Copy vendor libraries from /node_modules into dist/vendor
-gulp.task('copy', function() {
+gulp.task('copy', ['copy-wrapper'], function() {
   gulp.src([
     'node_modules/bootstrap/dist/**/*',
     '!**/npm.js',
@@ -97,12 +104,7 @@ gulp.task('copy', function() {
   // move images to dist folder
   gulp.src(['img/**/*.jpg'])
     .pipe(gulp.dest('dist/img'))
-
-  // move wrapper html file to dist
-  gulp.src(['wrapper/wrapper.html'])
-    .pipe(rename({basename: 'index'}))
-    .pipe(gulp.dest('dist'))
-})
+});
 
 // Build dist folder
 gulp.task('build', [
@@ -133,9 +135,9 @@ gulp.task('dev', [
   gulp.watch('less/*.less', ['less']);
   gulp.watch('css/*.css', ['minify-css']);
   gulp.watch('js/*.js', ['minify-js']);
+  gulp.watch('wrapper/*.html', ['copy-wrapper']);
   // Reloads the browser whenever HTML, JS, or CSS files change
   gulp.watch('dist/*.html', browserSync.reload);
-  gulp.watch('wrapper/*.html', browserSync.reload);
   gulp.watch('dist/*.css', browserSync.reload);
   gulp.watch('dist/*.js', browserSync.reload);
 });
