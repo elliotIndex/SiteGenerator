@@ -19,17 +19,24 @@
 <body id="page-top">
   <script>
     function mobilize() {
-      console.log("togging");
+      console.log('togging');
       document.querySelector('.template').classList.toggle('mobile');
+    }
+    function save() {
+      console.log('saving');
+      var iframe = document.getElementById('template-frame');
+      var innerDoc = iframe.contentDocument || iframe.contentWindow.document;
+      console.log('header', innerDoc.getElementsByClassName('tits-macgee')[0].textContent.trim());
     }
   </script>
   <nav class="wrapper-nav">
     Some header nav stuff goes here
     <button onclick="mobilize()">Mobilize!</button>
+    <button onclick="save()">Save</button>
   </nav>
 
   <div class="template-container">
-    <iframe src="http://localhost:8080/template.html" class="template">
+    <iframe id="template-frame" src="http://localhost:8080/template.html" class="template">
       <p>
         It looks like your browser doesn't support iframes. Please try visiting this site with
         Google Chrome, Safari, or Firefox
