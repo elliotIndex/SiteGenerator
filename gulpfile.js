@@ -130,7 +130,7 @@ gulp.task('dev', [
   'browserSync', 'build'
 ], function() {
   gulp.watch('text/*.json', ['template-html', 'minify-css']);
-  gulp.watch('templates/index.html.mustache', ['template-html']);
+  gulp.watch('templates/template.html.mustache', ['template-html']);
   gulp.watch('templates/variables.less.mustache', ['template-less']);
   gulp.watch('less/*.less', ['less']);
   gulp.watch('css/*.css', ['minify-css']);

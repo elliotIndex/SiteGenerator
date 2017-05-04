@@ -43,7 +43,8 @@
         <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"  data-target="#bs-example-navbar-collapse-1">
             <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
         </button>
-        <a class="navbar-brand page-scroll tits-macgee" href="#page-top" contenteditable="{{ editable }}">
+        <a class="navbar-brand page-scroll selectable" href="#page-top" contenteditable="{{ editable }}"
+          data-template-path="header.title">
           {{ header.title }}
         </a>
       </div>
@@ -53,7 +54,8 @@
         <ul class="nav navbar-nav navbar-right">
           {{#section-1.header-link}}
             <li>
-              <a class="page-scroll" href="#section-1" contenteditable="{{ editable }}">
+              <a class="page-scroll selectable" href="#section-1" contenteditable="{{ editable }}"
+                data-template-path="section-1.header-link">
                 {{ section-1.header-link }}
               </a>
            </li>

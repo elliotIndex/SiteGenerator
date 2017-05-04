@@ -26,7 +26,11 @@
       console.log('saving');
       var iframe = document.getElementById('template-frame');
       var innerDoc = iframe.contentDocument || iframe.contentWindow.document;
-      console.log('header', innerDoc.getElementsByClassName('tits-macgee')[0].textContent.trim());
+      var selectables = Array.from(innerDoc.getElementsByClassName('selectable')).map(selectable => ({
+        path: selectable.dataset.templatePath,
+        text: selectable.textContent.trim()
+      }));
+      console.log('selectables', selectables);
     }
   </script>
   <nav class="wrapper-nav">
