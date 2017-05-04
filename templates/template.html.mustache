@@ -9,7 +9,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>{{ tab-title }}</title>
+  <title>{{ tab-title.value }}</title>
 
   <!-- Bootstrap Core CSS -->
   <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -43,9 +43,8 @@
         <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"  data-target="#bs-example-navbar-collapse-1">
             <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
         </button>
-        <a class="navbar-brand page-scroll" href="#page-top"
-           data-template-path="header.title" contenteditable="{{ editable }}">
-          {{ header.title }}
+        <a class="navbar-brand page-scroll" href="#page-top" data-template-path="{{header.title.path}}">
+          {{ header.title.value }}
         </a>
       </div>
 
@@ -54,37 +53,32 @@
         <ul class="nav navbar-nav navbar-right">
           {{#section-1.header-link}}
             <li>
-              <a class="page-scroll" href="#section-1" data-template-path""
-                contenteditable="{{ editable }}">
-                {{ section-1.header-link }}
+              <a class="page-scroll" href="#section-1" data-template-path="{{section-1.header-link.path}}">
+                {{ section-1.header-link.value }}
               </a>
            </li>
           {{/section-1.header-link}}
 
           {{#section-2.header-link}}
             <li>
-              <a class="page-scroll" href="#section-2" data-template-path""
-                contenteditable="{{ editable }}"
-                data-template-path="section-2.header-link">
-                {{ section-2.header-link }}
+              <a class="page-scroll" href="#section-2" data-template-path="{{section-2.header-link.path}}">
+                {{ section-2.header-link.value }}
               </a>
             </li>
           {{/section-2.header-link}}
 
           {{#section-3.header-link}}
             <li>
-              <a class="page-scroll" href="#section-3" data-template-path""
-                contenteditable="{{ editable }}">
-                {{ section-3.header-link }}
+              <a class="page-scroll" href="#section-3" data-template-path="{{section-3.header-link.path}}">
+                {{ section-3.header-link.value }}
               </a>
             </li>
           {{/section-3.header-link}}
 
           {{#section-5.header-link}}
             <li>
-              <a class="page-scroll" href="#section-5" data-template-path""
-                contenteditable="{{ editable }}">
-                {{ section-5.header-link }}
+              <a class="page-scroll" href="#section-5" data-template-path="{{section-5.header-link.path}}">
+                {{ section-5.header-link.value }}
               </a>
             </li>
           {{/section-5.header-link}}
@@ -99,14 +93,12 @@
     <header>
       <div class="header-content">
         <div class="header-content-inner">
-          <h1 id="homeHeading" data-template-path""
-            contenteditable="{{#editable}}yo{{/editable}}">{{ title }}</h1>
+          <h1 id="homeHeading" data-template-path="{{title.path}}">{{ title.value }}</h1>
           <hr>
-          <p data-template-path""
-            contenteditable="{{ editable }}">{{ subtitle }}</p>
-          <a href="{{{ button-link }}}" class="btn btn-primary btn-xl page-scroll" data-template-path""
-            contenteditable="{{ editable }}">
-            {{ button }}
+          <p data-template-path="{{subtitle.path}}">{{ subtitle.value }}</p>
+          <a href="{{{ button-link.value }}}" class="btn btn-primary btn-xl page-scroll"
+            data-template-path="{{button.path}}" >
+            {{ button.value }}
           </a>
         </div>
       </div>
@@ -118,14 +110,11 @@
     <div class="container">
       <div class="row">
         <div class="col-lg-8 col-lg-offset-2 text-center">
-          <h2 class="section-heading" data-template-path""
-            contenteditable="{{ editable }}">{{ title }}</h2>
+          <h2 class="section-heading" data-template-path="{{title.path}}">{{ title.value }}</h2>
           <hr class="light">
-          <p class="text-faded" data-template-path""
-            contenteditable="{{ editable }}">{{ text }}</p>
-          <a href="{{ button-link }}" class="page-scroll btn btn-default btn-xl sr-button" data-template-path""
-            contenteditable="{{ editable }}">
-            {{ button }}
+          <p class="text-faded" data-template-path="{{text.path}}">{{ text.value }}</p>
+          <a href="{{ button-link.value }}" class="page-scroll btn btn-default btn-xl sr-button" data-template-path="{{button.path}}">
+            {{ button.value }}
           </a>
         </div>
       </div>
@@ -138,8 +127,7 @@
     <div class="container">
       <div class="row">
         <div class="col-lg-12 text-center">
-          <h2 class="section-heading" data-template-path""
-            contenteditable="{{ editable }}">{{ title }}</h2>
+          <h2 class="section-heading" data-template-path="{{title.path}}">{{ title.value }}</h2>
           <hr class="primary">
         </div>
       </div>
@@ -151,10 +139,8 @@
         <div class="col-lg-3 col-md-6 text-center">
           <div class="service-box">
             <i class="fa fa-4x fa-{{ icon }} text-primary sr-icons"></i>
-            <h3 data-template-path""
-              contenteditable="{{ editable }}">{{ title }}</h3>
-            <p class="text-muted" data-template-path""
-              contenteditable="{{ editable }}">{{ text }}</p>
+            <h3 data-template-path="{{title.path}}">{{ title.value }}</h3>
+            <p class="text-muted" data-template-path="{{text.path}}">{{ text.value }}</p>
           </div>
         </div>
         {{/blobs}}
@@ -171,17 +157,15 @@
 
         {{#blobs}}
         <div class="col-lg-4 col-sm-6">
-          <a href="{{{ link }}}" class="portfolio-box">
-            <img src="{{{ img }}}" class="img-responsive" alt="">
+          <a href="{{{ link.value }}}" class="portfolio-box">
+            <img src="{{{ img.value }}}" class="img-responsive" alt="">
             <div class="portfolio-box-caption">
               <div class="portfolio-box-caption-content">
-                <div class="project-category text-faded" data-template-path""
-                  contenteditable="{{ editable }}">
-                  {{ title }}
+                <div class="project-category text-faded" data-template-path="{{title.path}}">
+                  {{ title.value }}
                 </div>
-                <div class="project-name" data-template-path""
-                  contenteditable="{{ editable }}">
-                  {{ subtitle }}
+                <div class="project-name" data-template-path="{{subtitle.path}}">
+                  {{ subtitle.value }}
                 </div>
               </div>
             </div>
@@ -198,12 +182,10 @@
   <aside class="bg-dark">
     <div class="container text-center">
       <div class="call-to-action">
-        <h2 data-template-path""
-          contenteditable="{{ editable }}">{{ title }}</h2>
+        <h2 data-template-path="{{title.path}}">{{ title.value }}</h2>
         {{#button}}
-        <a href="{{{ link }}}" class="btn btn-default btn-xl sr-button" data-template-path""
-          contenteditable="{{ editable }}">
-          {{ text }}
+        <a href="{{{ link.value }}}" class="btn btn-default btn-xl sr-button" data-template-path="{{text.path}}">
+          {{ text.value }}
         </a>
         {{/button}}
       </div>
@@ -216,18 +198,15 @@
     <div class="container">
       <div class="row">
         <div class="center-block text-center">
-          <h2 class="section-heading" data-template-path""
-            contenteditable="{{ editable }}"> {{ title }}</h2>
+          <h2 class="section-heading" data-template-path="{{title.path}}"> {{ title.value }}</h2>
           <hr class="primary">
-          <p data-template-path""
-            contenteditable="{{ editable }}">{{ subtitle }}</p>
+          <p data-template-path="{{subtitle.path}}">{{ subtitle.value }}</p>
         </div>
 
         {{#contacts}}
         <div class="col-lg-4 text-center">
           <i class="fa fa-{{ icon }} fa-3x sr-contact"></i>
-          <p data-template-path""
-            contenteditable="{{ editable }}">{{{ text }}}</p>
+          <p data-template-path="{{text.path}}">{{{ text.value }}}</p>
         </div>
         {{/contacts}}
 

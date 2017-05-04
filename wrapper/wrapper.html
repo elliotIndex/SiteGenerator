@@ -24,7 +24,8 @@
   </nav>
 
   <div class="template-container">
-    <iframe id="template-frame" src="http://localhost:3000/template.html" class="template">
+    <iframe id="template-frame" src="http://localhost:3000/template.html" class="template"
+      onload="templateFrameLoad()">
       <p>
         It looks like your browser doesn't support iframes. Please try visiting this site with
         Google Chrome, Safari, or Firefox
@@ -36,20 +37,31 @@
   <script src="vendor/jquery/jquery.min.js"></script>
 
   <script>
+    var templateFrame = $('#template-frame');
+    var save = function() {
+      console.log("not ready yet");
+    };
+    var templateFrameLoad = function() {
+      console.log("iframe loaded");
+      var innerDoc = templateFrame.contents();
+      innerDoc.find('[data-template-path]').attr('contenteditable', 'true');
+      save = function() {
+        console.log('saving');
+        var selectables = Array.from(innerDoc.find('[data-template-path]')).map(selectable => ({
+          path: selectable.dataset.templatePath,
+          text: selectable.textContent.trim()
+        }));
+        console.log('selectables', selectables);
+      };
+    }
+
+    templateFrame.onload = templateFrameLoad;
+
     function mobilize() {
       console.log('togging');
       document.querySelector('.template').classList.toggle('mobile');
     }
-    function save() {
-      console.log('saving');
-      var iframe = $('#template-frame');
-      var innerDoc = iframe.contents()
-      var selectables = Array.from(innerDoc.find('[data-template-path]')).map(selectable => ({
-        path: selectable.dataset.templatePath,
-        text: selectable.textContent.trim()
-      }));
-      console.log('selectables', selectables);
-    }
+
   </script>
 </body>
 

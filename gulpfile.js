@@ -9,7 +9,7 @@ var mustache = require('gulp-mustache');
 var pkg = require('./package.json');
 // var pageData = require('./page-data/context.js');
 // var pageData = require('./page-data/practicalGuide.js');
-var pageData = require('./page-data/editable.js');
+var pageData = require('./page-data/preprocessor.js');
 
 // Fill out HTML template with page-data
 gulp.task('template-html', function() {

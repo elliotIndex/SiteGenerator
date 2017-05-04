@@ -13,13 +13,19 @@ function appendLeafPaths(muObj, path = '') {
       path: path
     }
   }
+  if (Array.isArray(muObj)) {
+    return muObj.reduce((outArr, element, index) => {
+      outArr.push(appendLeafPaths(element, path ? `${path}.${index}` : index));
+      return outArr;
+    }, [])
+  }
   return Object.keys(muObj).reduce((outObj, key) => {
     outObj[key] = appendLeafPaths(muObj[key], path ? `${path}.${key}` : key);
     return outObj;
-  }, {})
+  }, {});
 }
 
 console.assert(JSON.stringify(appendLeafPaths({ a: "b", c: { d: "e" } }))
   === JSON.stringify({"a":{"value":"b","path":"a"},"c":{"d":{"value":"e","path":"c.d"}}}));
 
-return appendLeafPaths(pageData);
+module.exports = appendLeafPaths(pageData);
