@@ -3,3 +3,10 @@
   height: 0px;
   overflow: visible;
 }
+.inactive-link {
+  pointer-events: none;
+  cursor: text;
+}
+.page-scroll.inactive-link {
+  pointer-events: all;
+}

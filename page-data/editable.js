@@ -59,7 +59,7 @@ module.exports = {
         title: "Blob 3",
         subtitle: "The destination link is the blob link",
         link: "http://www.google.com",
-        img: "http://cdn.ebaumsworld.com/picture/deadpuppies13/kittens4.jpg"
+        img: "http://www.cmia-viladoconde.net/images_upload/11-10-2007.jpg"
       }
     ]
   },

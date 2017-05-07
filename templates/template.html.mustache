@@ -48,7 +48,7 @@
         <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"  data-target="#bs-example-navbar-collapse-1">
             <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
         </button>
-        <a class="navbar-brand page-scroll" href="#page-top" data-template-path="{{header.title.path}}">
+        <a class="navbar-brand page-scroll" href="#page-top" data-template-path="{{header.title.path}}" target="_parent">
           {{ header.title.value }}
         </a>
       </div>
@@ -102,7 +102,7 @@
           <hr>
           <p data-template-path="{{subtitle.path}}">{{ subtitle.value }}</p>
           <a href="{{{ button-link.value }}}" class="btn btn-primary btn-xl page-scroll"
-            data-template-path="{{button.path}}" >
+            data-template-path="{{button.path}}" target="_parent">
             {{ button.value }}
           </a>
           <div class="sg-hidden-template" data-template-path="{{button-link.path}}">
@@ -121,9 +121,14 @@
           <h2 class="section-heading" data-template-path="{{title.path}}">{{ title.value }}</h2>
           <hr class="light">
           <p class="text-faded" data-template-path="{{text.path}}">{{ text.value }}</p>
-          <a href="{{ button-link.value }}" class="page-scroll btn btn-default btn-xl sr-button" data-template-path="{{button.path}}">
+          <a href="{{{ button-link.value }}}" class="page-scroll btn btn-default btn-xl sr-button" data-template-path="{{button.path}}" target="_parent">
             {{ button.value }}
           </a>
+          {{#editable}}
+          <div class="sg-hidden-template" data-template-path="{{button-link.path}}">
+            {{{ button-link.value }}}
+          </div>
+          {{/editable}}
         </div>
       </div>
     </div>
@@ -165,7 +170,7 @@
 
         {{#blobs}}
         <div class="col-lg-4 col-sm-6">
-          <a href="{{{ link.value }}}" class="portfolio-box">
+          <a href="{{{ link.value }}}" class="portfolio-box" target="_parent">
             <img src="{{{ img.value }}}" class="img-responsive" alt="">
             <div class="portfolio-box-caption">
               <div class="portfolio-box-caption-content">
@@ -175,6 +180,11 @@
                 <div class="project-name" data-template-path="{{subtitle.path}}">
                   {{ subtitle.value }}
                 </div>
+                {{#editable}}
+                <div class="sg-hidden-template" data-template-path="{{link.path}}">
+                  {{{ link.value }}}
+                </div>
+                {{/editable}}
               </div>
             </div>
           </a>
@@ -192,12 +202,14 @@
       <div class="call-to-action">
         <h2 data-template-path="{{title.path}}">{{ title.value }}</h2>
         {{#button}}
-        <a href="{{{ link.value }}}" class="btn btn-default btn-xl sr-button" data-template-path="{{text.path}}">
+        <a href="{{{ link.value }}}" class="btn btn-default btn-xl sr-button" data-template-path="{{text.path}} target="_parent"" target="_parent">
           {{ text.value }}
         </a>
+        {{#editable}}
         <div class="sg-hidden-template" data-template-path="{{link.path}}">
           {{{ link.value }}}
         </div>
+        {{/editable}}
         {{/button}}
       </div>
     </div>

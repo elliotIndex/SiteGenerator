@@ -9,14 +9,17 @@ function toggleMobileViewport() {
 function viewportSetup() {
   console.log('iframe loaded');
   var viewportContext = $('#template-frame').contents();
+  var templateItems = viewportContext.find('[data-template-path]');
+  // var editableItems = viewportContext.find('editable');
 
   $('#hidden-toggle-btn').click(function() {
-    console.log("toogling");
     viewportContext.find('.sg-hidden-template').toggle();
+    viewportContext.find('a').toggleClass('inactive-link')
+    templateItems.attr('contenteditable', function(_, tOrF){
+      return tOrF === 'true' ? 'false' : 'true';
+    });
   });
 
-  var templateItems = viewportContext.find('[data-template-path]');
-  templateItems.attr('contenteditable', 'true');
   $('#save-btn').click(function() {
     save(templateItems);
   });
