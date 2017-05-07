@@ -1,20 +1,28 @@
 var utils = require('./utils');
 var save = require('./save');
 
-function mobilize() {
+function toggleMobileViewport() {
   console.log('togging');
   $('.template').toggleClass('mobile');
 }
 
-var templateFrameLoad = function() {
+function viewportSetup() {
   console.log('iframe loaded');
-  var templateItems = $('#template-frame').contents().find('[data-template-path]');
+  var viewportContext = $('#template-frame').contents();
+
+  $('#hidden-toggle-btn').click(function() {
+    console.log("toogling");
+    viewportContext.find('.sg-hidden-template').toggle();
+  });
+
+  var templateItems = viewportContext.find('[data-template-path]');
   templateItems.attr('contenteditable', 'true');
-  $('#save-btn').on('click', function() { save(templateItems); });
+  $('#save-btn').click(function() {
+    save(templateItems);
+  });
 };
 
-
 module.exports = function() {
-  $('#mobile-toggle-btn').click(mobilize);
-  $('#template-frame').on('load', templateFrameLoad);
+  $('#mobile-toggle-btn').click(toggleMobileViewport);
+  $('#template-frame').on('load', viewportSetup);
 }

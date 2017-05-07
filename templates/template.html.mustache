@@ -100,6 +100,9 @@
             data-template-path="{{button.path}}" >
             {{ button.value }}
           </a>
+          <div class="sg-hidden-template" data-template-path="{{button-link.path}}">
+            {{{ button-link.value }}}
+          </div>
         </div>
       </div>
     </header>
@@ -187,6 +190,9 @@
         <a href="{{{ link.value }}}" class="btn btn-default btn-xl sr-button" data-template-path="{{text.path}}">
           {{ text.value }}
         </a>
+        <div class="sg-hidden-template" data-template-path="{{link.path}}">
+          {{{ link.value }}}
+        </div>
         {{/button}}
       </div>
     </div>
