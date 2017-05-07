@@ -12,16 +12,32 @@
   <title>Site Generator</title>
 
   <!-- Bootstrap Core CSS -->
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
   <link href="wrapper.css" rel="stylesheet">
 
 </head>
 
 <body id="page-top">
-  <nav class="wrapper-nav">
-    Some header nav stuff goes here
-    <button id="mobile-toggle-btn">Mobilize</button>
-    <button id="save-btn">Save</button>
+  <nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
+    <div class="container-fluid">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <a class="navbar-brand page-scroll" href="#page-top" data-template-path="{{header.title.path}}">
+          Site Generator
+        </a>
+        <button id="mobile-toggle-btn" type="button" class="btn btn-default navbar-btn">
+          Mobile
+        </button>
+        <button id="save-btn" type="button" class="btn btn-default navbar-btn">
+          Save
+        </button>
+      </div>
+      <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container-fluid -->
   </nav>
+
 
   <div class="template-container">
     <iframe id="template-frame" src="http://localhost:3000/template.html" class="template">
