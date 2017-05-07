@@ -1,0 +1,5 @@
+.sg-hidden-template {
+  display: none;
+  height: 0px;
+  overflow: visible;
+}

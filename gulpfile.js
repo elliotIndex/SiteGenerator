@@ -23,7 +23,7 @@ gulp.task('template-html', function() {
 });
 
 // Fill out CSS variables template with page-data
-gulp.task('template-less', function() {
+gulp.task('variables-less', function() {
   return gulp.src('./templates/variables.less.mustache')
     .pipe(mustache(pageData))
     .pipe(rename({extname: ''}))
@@ -31,25 +31,33 @@ gulp.task('template-less', function() {
     .pipe(gulp.dest('less'));
 });
 
+// Create css page for templating only
+gulp.task('template-less', function() {
+  return gulp.src('./less/template.less')
+    .pipe(less())
+    .pipe(gulp.dest('css'))
+    .pipe(browserSync.reload({stream: true}));
+});
+
 // Create less for wrapper
 gulp.task('wrapper-less', function () {
   return gulp.src('./less/wrapper.less')
     .pipe(less())
-    .pipe(gulp.dest('dist'))
+    .pipe(gulp.dest('css'))
     .pipe(browserSync.reload({stream: true}));
 })
 
 // Compile LESS files from /less into /css
-gulp.task('less', ['template-less', 'wrapper-less'], function() {
+gulp.task('less', ['variables-less', 'wrapper-less', 'template-less'], function() {
   return gulp.src('less/creative.less')
     .pipe(less())
     .pipe(gulp.dest('css'))
-    .pipe(browserSync.reload({stream: true}))
+    .pipe(browserSync.reload({stream: true}));
 });
 
 // Minify compiled CSS
 gulp.task('minify-css', ['less'], function() {
-  return gulp.src('css/creative.css')
+  return gulp.src('css/*.css')
     .pipe(cleanCSS({compatibility: 'ie8'}))
     .pipe(rename({suffix: '.min'}))
     .pipe(browserSync.reload({stream: true}))
@@ -132,7 +140,7 @@ gulp.task('copy', ['copy-wrapper'], function() {
 
 // Build dist folder
 gulp.task('build', [
-  'template-less',
+  'variables-less',
   'less',
   'template-html',
   'minify-css',
@@ -156,7 +164,7 @@ gulp.task('dev', [
 ], function() {
   gulp.watch('text/*.json', ['template-html', 'minify-css']);
   gulp.watch('templates/template.html.mustache', ['template-html']);
-  gulp.watch('templates/variables.less.mustache', ['template-less']);
+  gulp.watch('templates/variables.less.mustache', ['variables-less']);
   gulp.watch('less/*.less', ['less']);
   gulp.watch('css/*.css', ['minify-css']);
   gulp.watch('js/*.js', ['minify-js']);
