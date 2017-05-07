@@ -5,8 +5,10 @@ var header = require('gulp-header');
 var cleanCSS = require('gulp-clean-css');
 var rename = require('gulp-rename');
 var uglify = require('gulp-uglify');
+var concat = require('gulp-concat');
 var mustache = require('gulp-mustache');
-var pkg = require('./package.json');
+var browserify = require('gulp-browserify');
+
 // var pageData = require('./page-data/context.js');
 // var pageData = require('./page-data/practicalGuide.js');
 var pageData = require('./page-data/preprocessor.js');
@@ -69,6 +71,28 @@ gulp.task('copy-wrapper', function () {
     .pipe(gulp.dest('dist'));
 });
 
+// Concat wrapper JS
+gulp.task('concat-wrapper-js', function() {
+    return gulp.src('./wrapper/js/*.js')
+      .pipe(concat('wrapper.js'))
+      .pipe(gulp.dest('dist'))
+      .pipe(rename('wrapper.min.js'))
+      .pipe(uglify())
+      .pipe(browserSync.reload({stream: true}))
+      .pipe(gulp.dest('dist'));
+});
+
+// browserify and Concat wrapper JS
+gulp.task('concat-wrapper-js', function() {
+    // Single entry point to browserify
+    gulp.src('wrapper/js/wrapper.js')
+        .pipe(browserify({
+          insertGlobals : true,
+          debug : !gulp.env.production
+        }))
+        .pipe(gulp.dest('./dist'))
+});
+
 // Copy vendor libraries from /node_modules into dist/vendor
 gulp.task('copy', ['copy-wrapper'], function() {
   gulp.src([
@@ -113,6 +137,7 @@ gulp.task('build', [
   'template-html',
   'minify-css',
   'minify-js',
+  'concat-wrapper-js',
   'copy'
 ]);
 
@@ -136,6 +161,7 @@ gulp.task('dev', [
   gulp.watch('css/*.css', ['minify-css']);
   gulp.watch('js/*.js', ['minify-js']);
   gulp.watch('wrapper/*.html', ['copy-wrapper']);
+  gulp.watch('wrapper/js/*.js', ['concat-wrapper-js']);
   // Reloads the browser whenever HTML, JS, or CSS files change
   gulp.watch('dist/*.html', browserSync.reload);
   gulp.watch('dist/*.css', browserSync.reload);
