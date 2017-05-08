@@ -61,6 +61,21 @@ module.exports = {
         subtitle: "The background is the blob img",
         link: "http://www.google.com",
         img: "http://www.azula.com/wp-content/uploads/2017/03/ElephantSeal.jpg"
+      }, {
+        title: "Section 3 Blob 4",
+        subtitle: "The background is the blob img",
+        link: "http://www.google.com",
+        img: "http://www.azula.com/wp-content/uploads/2017/03/ElephantSeal.jpg"
+      }, {
+        title: "Section 3 Blob 5",
+        subtitle: "The background is the blob img",
+        link: "http://www.google.com",
+        img: "http://www.azula.com/wp-content/uploads/2017/03/ElephantSeal.jpg"
+      }, {
+        title: "Section 3 Blob 6",
+        subtitle: "hexagons are better than ocatatat",
+        link: "http://www.google.com",
+        img: "http://www.azula.com/wp-content/uploads/2017/03/ElephantSeal.jpg"
       }
     ]
   },
