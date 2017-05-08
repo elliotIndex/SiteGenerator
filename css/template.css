@@ -10,3 +10,9 @@
 .page-scroll.inactive-link {
   pointer-events: all;
 }
+.background-img-src {
+  vertical-align: bottom;
+  bottom: 45px;
+  left: 15px;
+  position: absolute;
+}

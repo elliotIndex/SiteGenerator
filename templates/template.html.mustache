@@ -95,7 +95,7 @@
   </nav>
 
   {{#main}}
-    <header>
+    <header style="background-image: linear-gradient( rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3) ), url('{{{ img.value }}}')">
       <div class="header-content">
         <div class="header-content-inner">
           <h1 id="homeHeading" data-template-path="{{title.path}}">{{ title.value }}</h1>
@@ -105,11 +105,20 @@
             data-template-path="{{button.path}}" target="_parent">
             {{ button.value }}
           </a>
+          {{#editable}}
           <div class="sg-hidden-template" data-template-path="{{button-link.path}}">
-            {{{ button-link.value }}}
+            Button destination link:
+            <span data-template-path="{{img.path}}"> {{{ button-link.value }}} </span>
           </div>
+          {{/editable}}
         </div>
       </div>
+      {{#editable}}
+      <div class="sg-hidden-template background-img-src">
+        Background Image source:
+        <span data-template-path="{{img.path}}"> {{{ img.value }}} </span>
+      </div>
+      {{/editable}}
     </header>
   {{/main}}
 
@@ -172,6 +181,14 @@
         <div class="col-lg-4 col-sm-6">
           <a href="{{{ link.value }}}" class="portfolio-box" target="_parent">
             <img src="{{{ img.value }}}" class="img-responsive" alt="">
+            {{#editable}}
+            <div class="sg-hidden-template background-img-src">
+              Background Image source:
+              <span data-template-path="{{img.path}}">
+                {{{ img.value }}}
+              </span>
+            </div>
+            {{/editable}}
             <div class="portfolio-box-caption">
               <div class="portfolio-box-caption-content">
                 <div class="project-category text-faded" data-template-path="{{title.path}}">
