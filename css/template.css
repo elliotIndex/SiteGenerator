@@ -7,8 +7,12 @@
   pointer-events: none;
   cursor: text;
 }
-.page-scroll.inactive-link {
+.page-scroll.inactive-link,
+.portfolio-box.inactive-link {
   pointer-events: all;
+}
+.portfolio-box .sg-hidden-template {
+  height: auto;
 }
 .background-img-src {
   vertical-align: bottom;
