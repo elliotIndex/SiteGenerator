@@ -42,8 +42,13 @@ function changeElementType(element, newType) {
   });
 }
 
+function replaceAll(string, originalVal, newVal) {
+  return string.split(originalVal).join(newVal);
+}
+
 module.exports = {
   deepSet,
   cycle,
   changeElementsTypes,
+  replaceAll,
 }

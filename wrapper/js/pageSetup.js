@@ -1,5 +1,6 @@
 var utils = require('./utils');
 var save = require('./save');
+var editTemplate = require('./editTemplate');
 
 function toggleMobileViewport() {
   $('.template').toggleClass('mobile');
@@ -11,30 +12,23 @@ function toggleMobileViewport() {
 function viewportSetup() {
   $('.navbar-text').toggle();
   $('.navbar-btn').toggle();
+
   var viewportContext = $('#template-frame').contents();
-  var templateItems = viewportContext.find('[data-template-path]');
-  // var editableItems = viewportContext.find('editable');
 
-  $('#editable-toggle-btn').click(function() {
-    viewportContext.find('.sg-hidden-template').toggle();
-
-    viewportContext.find('.portfolio-box').toggleClass('hover');
-    if ($(viewportContext.find('.portfolio-box')[0]).prop('tagName').toLowerCase() === 'a') {
-      utils.changeElementsTypes(viewportContext.find('.portfolio-box'), 'div');
-      viewportContext.find('.portfolio-box').toggleClass('inactive-link');
-    } else {
-      utils.changeElementsTypes(viewportContext.find('.portfolio-box'), 'a');
-    }
-
-    viewportContext.find('a').toggleClass('inactive-link');
-
-    $('#editable-toggle-btn').text(function(_, currentText) {
-      return utils.cycle(currentText.trim(), ['Edit Mode', 'Presentation Mode']);
-    });
-    templateItems.attr('contenteditable', function(_, trueOrFalse){
-      return utils.cycle(trueOrFalse, ['true', 'false']);
-    });
+  // Make all items with path ids findable
+  viewportContext.find('[id]').prop('id', function(_, id) {
+    return utils.replaceAll(id, '.', '-');
   });
+
+  // Update the template when external modifiers change
+  viewportContext.find('body')
+    .on('focus', '.sg-external-modifier', editTemplate.storeOriginal)
+    .on('blur', '.sg-external-modifier', editTemplate.updateTarget(viewportContext));
+
+  var templateItems = viewportContext.find('[data-template-path]');
+  window.viewportContext = viewportContext;
+
+  $('#editable-toggle-btn').click(editTemplate.togglePageEditable(viewportContext, templateItems));
 
   $('#save-btn').click(function() {
     save(templateItems);

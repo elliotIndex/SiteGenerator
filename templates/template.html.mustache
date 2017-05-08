@@ -95,20 +95,21 @@
   </nav>
 
   {{#main}}
-    <header style="background-image: linear-gradient( rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3) ), url('{{{ img.value }}}')">
+    <header id="{{img.path}}" style="background-image: linear-gradient( rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3) ), url('{{{ img.value }}}')">
       <div class="header-content">
         <div class="header-content-inner">
           <h1 id="homeHeading" data-template-path="{{title.path}}">{{ title.value }}</h1>
           <hr>
           <p data-template-path="{{subtitle.path}}">{{ subtitle.value }}</p>
-          <a href="{{{ button-link.value }}}" class="btn btn-primary btn-xl page-scroll"
-            data-template-path="{{button.path}}" target="_parent">
+          <a id="{{button-link.path}}" href="{{{ button-link.value }}}" class="btn btn-primary btn-xl page-scroll" data-template-path="{{button.path}}" target="_parent">
             {{ button.value }}
           </a>
           {{#editable}}
-          <div class="sg-hidden-template" data-template-path="{{button-link.path}}">
+          <div class="sg-hidden-template">
             Button Destination Link:
-            <span data-template-path="{{img.path}}"> {{{ button-link.value }}} </span>
+            <span class="sg-external-modifier" data-template-path="{{button-link.path}}">
+              {{{ button-link.value }}}
+            </span>
           </div>
           {{/editable}}
         </div>
@@ -116,7 +117,7 @@
       {{#editable}}
       <div class="sg-hidden-template background-img-src">
         Background Image Source:
-        <span data-template-path="{{img.path}}"> {{{ img.value }}} </span>
+        <span class="sg-external-modifier" data-template-path="{{img.path}}"> {{{ img.value }}} </span>
       </div>
       {{/editable}}
     </header>
@@ -130,13 +131,13 @@
           <h2 class="section-heading" data-template-path="{{title.path}}">{{ title.value }}</h2>
           <hr class="light">
           <p class="text-faded" data-template-path="{{text.path}}">{{ text.value }}</p>
-          <a href="{{{ button-link.value }}}" class="page-scroll btn btn-default btn-xl sr-button" data-template-path="{{button.path}}" target="_parent">
+          <a id="{{button-link.path}}" href="{{{ button-link.value }}}" class="page-scroll btn btn-default btn-xl sr-button" data-template-path="{{button.path}}" target="_parent">
             {{ button.value }}
           </a>
           {{#editable}}
           <div class="sg-hidden-template">
             Button Destination Link:
-            <span data-template-path="{{button-link.path}}"> {{{ button-link.value }}} </span>
+            <span class="sg-external-modifier" data-template-path="{{button-link.path}}"> {{{ button-link.value }}} </span>
           </div>
           {{/editable}}
         </div>
@@ -164,10 +165,10 @@
             {{#editable}}
             <div class="sg-hidden-template">
               Icon Type:
-              <span data-template-path="{{icon.path}}"> {{ icon.value}} </span>
+              <span class="sg-external-modifier" data-template-path="{{icon.path}}"> {{ icon.value}} </span>
             </div>
             {{/editable}}
-            <i class="fa fa-4x fa-{{ icon.value }} text-primary sr-icons"></i>
+            <i id="{{icon.path}}" class="fa fa-4x fa-{{ icon.value }} text-primary sr-icons"></i>
             <h3 data-template-path="{{title.path}}">{{ title.value }}</h3>
             <p class="text-muted" data-template-path="{{text.path}}">{{ text.value }}</p>
           </div>
@@ -186,8 +187,8 @@
 
         {{#blobs}}
         <div class="col-lg-4 col-sm-6">
-          <a href="{{{ link.value }}}" class="portfolio-box" target="_parent">
-            <img src="{{{ img.value }}}" class="img-responsive" alt="">
+          <a id="{{link.path}}" href="{{{ link.value }}}" class="portfolio-box" target="_parent">
+            <img id"{{img.path}}" src="{{{ img.value }}}" class="img-responsive" alt="">
             <div class="portfolio-box-caption">
               <div class="portfolio-box-caption-content">
                 <div class="project-category text-faded" data-template-path="{{title.path}}">
@@ -199,13 +200,13 @@
                 {{#editable}}
                 <div class="sg-hidden-template">
                   Background Image Source:
-                  <span data-template-path="{{img.path}}"> {{{ img.value }}} </span>
+                  <span class="sg-external-modifier" data-template-path="{{img.path}}"> {{{ img.value }}} </span>
                 </div>
                 {{/editable}}
                 {{#editable}}
                 <div class="sg-hidden-template">
                   Destination Link:
-                  <span data-template-path="{{link.path}}"> {{{ link.value }}} </span>
+                  <span class="sg-external-modifier" data-template-path="{{link.path}}"> {{{ link.value }}} </span>
                 </div>
                 {{/editable}}
               </div>
@@ -225,13 +226,13 @@
       <div class="call-to-action">
         <h2 data-template-path="{{title.path}}">{{ title.value }}</h2>
         {{#button}}
-        <a href="{{{ link.value }}}" class="btn btn-default btn-xl sr-button" data-template-path="{{text.path}}" target="_parent" target="_parent">
+        <a id="link.path" href="{{{ link.value }}}" class="btn btn-default btn-xl sr-button" data-template-path="{{text.path}}" target="_parent" target="_parent">
           {{ text.value }}
         </a>
         {{#editable}}
         <div class="sg-hidden-template">
           Button Destination Link:
-          <span data-template-path="{{link.path}}"> {{{ link.value }}} </span>
+          <span class="sg-external-modifier" data-template-path="{{link.path}}"> {{{ link.value }}} </span>
         </div>
         {{/editable}}
         {{/button}}
@@ -255,10 +256,10 @@
           {{#editable}}
           <div class="sg-hidden-template">
             Icon Type:
-            <span data-template-path="{{icon.path}}"> {{ icon.value}} </span>
+            <span class="sg-external-modifier" data-template-path="{{icon.path}}"> {{ icon.value}} </span>
           </div>
           {{/editable}}
-          <i class="fa fa-{{ icon.value }} fa-3x sr-contact"></i>
+          <i id="{{icon.path}}" class="fa fa-{{ icon.value }} fa-3x sr-contact"></i>
           <p data-template-path="{{text.path}}">{{{ text.value }}}</p>
         </div>
         {{/contacts}}
