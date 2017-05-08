@@ -45,8 +45,8 @@ function updateTarget(viewportContext) {
       var targetId = utils.replaceAll($this.data('template-path'),'.', '-');
       var target = viewportContext.find('#' + targetId);
       var tagName = target.prop('tagName').toLowerCase();
-      if (tagName === 'a') {
-        target.prop('href', $this.html())
+      if (tagName === 'a' || tagName === 'div') {
+        target.attr('href', $this.html())
       } else if (tagName === 'img') {
         target.prop('src', $this.html())
       } else if (tagName === 'header') {
