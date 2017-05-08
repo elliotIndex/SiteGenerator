@@ -57,7 +57,7 @@ gulp.task('less', ['variables-less', 'wrapper-less', 'template-less'], function(
 
 // Minify compiled CSS
 gulp.task('minify-css', ['less'], function() {
-  return gulp.src('css/*.css')
+  return gulp.src('temp-css/*.css')
     .pipe(cleanCSS({compatibility: 'ie8'}))
     .pipe(rename({suffix: '.min'}))
     .pipe(browserSync.reload({stream: true}))
@@ -166,7 +166,7 @@ gulp.task('dev', [
   gulp.watch('templates/template.html.mustache', ['template-html']);
   gulp.watch('templates/variables.less.mustache', ['variables-less']);
   gulp.watch('less/*.less', ['less']);
-  gulp.watch('css/*.css', ['minify-css']);
+  gulp.watch('temp-css/*.css', ['minify-css']);
   gulp.watch('js/*.js', ['minify-js']);
   gulp.watch('wrapper/*.html', ['copy-wrapper']);
   gulp.watch('wrapper/js/*.js', ['concat-wrapper-js']);
