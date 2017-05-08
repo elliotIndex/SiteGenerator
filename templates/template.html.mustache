@@ -161,7 +161,7 @@
         {{#blobs}}
         <div class="col-lg-3 col-md-6 text-center">
           <div class="service-box">
-            <i class="fa fa-4x fa-{{ icon }} text-primary sr-icons"></i>
+            <i class="fa fa-4x fa-{{ icon.value }} text-primary sr-icons"></i>
             <h3 data-template-path="{{title.path}}">{{ title.value }}</h3>
             <p class="text-muted" data-template-path="{{text.path}}">{{ text.value }}</p>
           </div>
@@ -246,7 +246,7 @@
 
         {{#contacts}}
         <div class="col-lg-4 text-center">
-          <i class="fa fa-{{ icon }} fa-3x sr-contact"></i>
+          <i class="fa fa-{{ icon.value }} fa-3x sr-contact"></i>
           <p data-template-path="{{text.path}}">{{{ text.value }}}</p>
         </div>
         {{/contacts}}
