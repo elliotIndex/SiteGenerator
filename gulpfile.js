@@ -35,7 +35,7 @@ gulp.task('variables-less', function() {
 gulp.task('template-less', function() {
   return gulp.src('./less/template.less')
     .pipe(less())
-    .pipe(gulp.dest('css'))
+    .pipe(gulp.dest('temp-css'))
     .pipe(browserSync.reload({stream: true}));
 });
 
@@ -43,7 +43,7 @@ gulp.task('template-less', function() {
 gulp.task('wrapper-less', function () {
   return gulp.src('./less/wrapper.less')
     .pipe(less())
-    .pipe(gulp.dest('css'))
+    .pipe(gulp.dest('temp-css'))
     .pipe(browserSync.reload({stream: true}));
 })
 
@@ -51,7 +51,7 @@ gulp.task('wrapper-less', function () {
 gulp.task('less', ['variables-less', 'wrapper-less', 'template-less'], function() {
   return gulp.src('less/creative.less')
     .pipe(less())
-    .pipe(gulp.dest('css'))
+    .pipe(gulp.dest('temp-css'))
     .pipe(browserSync.reload({stream: true}));
 });
 
