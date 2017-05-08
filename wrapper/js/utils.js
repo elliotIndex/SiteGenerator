@@ -20,6 +20,12 @@ function deepSet(obj, path, value) {
   return obj;
 }
 
+function cycle(value, options) {
+  var index = (options.indexOf(value) + 1) % options.length;
+  return options[index]
+}
+
 module.exports = {
   deepSet,
+  cycle,
 }

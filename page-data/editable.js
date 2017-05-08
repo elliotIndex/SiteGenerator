@@ -16,7 +16,7 @@ module.exports = {
     "header-link": "Section 1 link",
     "text": "Section 1 text goes here. It could be very long or very short. Don't worry to much. It's gonna be super chill.",
     "button": "Section 1 button",
-    "button-link": "http://i.imgur.com/CUJAZL5.jpg"
+    "button-link": "https://en.wikipedia.org/wiki/Mulan_(1998_film)"
   },
   "section-2": {
     "title": "Section 2 Title",
@@ -55,11 +55,6 @@ module.exports = {
         subtitle: "The background is the blob img",
         link: "http://www.google.com",
         img: "http://www.azula.com/wp-content/uploads/2017/03/ElephantSeal.jpg"
-      }, {
-        title: "Blob 3",
-        subtitle: "The destination link is the blob link",
-        link: "http://www.google.com",
-        img: "http://www.cmia-viladoconde.net/images_upload/11-10-2007.jpg"
       }
     ]
   },
