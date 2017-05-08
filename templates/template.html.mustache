@@ -107,7 +107,7 @@
           </a>
           {{#editable}}
           <div class="sg-hidden-template" data-template-path="{{button-link.path}}">
-            Button destination link:
+            Button Destination Link:
             <span data-template-path="{{img.path}}"> {{{ button-link.value }}} </span>
           </div>
           {{/editable}}
@@ -115,7 +115,7 @@
       </div>
       {{#editable}}
       <div class="sg-hidden-template background-img-src">
-        Background Image source:
+        Background Image Source:
         <span data-template-path="{{img.path}}"> {{{ img.value }}} </span>
       </div>
       {{/editable}}
@@ -136,6 +136,12 @@
           {{#editable}}
           <div class="sg-hidden-template" data-template-path="{{button-link.path}}">
             {{{ button-link.value }}}
+          </div>
+          {{/editable}}
+          {{#editable}}
+          <div class="sg-hidden-template">
+            Button Destination Link:
+            <span data-template-path="{{button-link.path}}"> {{{ button-link.value }}} </span>
           </div>
           {{/editable}}
         </div>
@@ -191,7 +197,7 @@
                 </div>
                 {{#editable}}
                 <div class="sg-hidden-template">
-                  Background Image source:
+                  Background Image Source:
                   <span data-template-path="{{img.path}}"> {{{ img.value }}} </span>
                 </div>
                 {{/editable}}
@@ -218,7 +224,7 @@
       <div class="call-to-action">
         <h2 data-template-path="{{title.path}}">{{ title.value }}</h2>
         {{#button}}
-        <a href="{{{ link.value }}}" class="btn btn-default btn-xl sr-button" data-template-path="{{text.path}} target="_parent"" target="_parent">
+        <a href="{{{ link.value }}}" class="btn btn-default btn-xl sr-button" data-template-path="{{text.path}}" target="_parent" target="_parent">
           {{ text.value }}
         </a>
         {{#editable}}
