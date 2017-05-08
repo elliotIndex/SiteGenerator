@@ -252,6 +252,12 @@
 
         {{#contacts}}
         <div class="col-lg-4 text-center">
+          {{#editable}}
+          <div class="sg-hidden-template">
+            Icon Type:
+            <span data-template-path="{{icon.path}}"> {{ icon.value}} </span>
+          </div>
+          {{/editable}}
           <i class="fa fa-{{ icon.value }} fa-3x sr-contact"></i>
           <p data-template-path="{{text.path}}">{{{ text.value }}}</p>
         </div>
