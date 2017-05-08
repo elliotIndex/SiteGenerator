@@ -134,11 +134,6 @@
             {{ button.value }}
           </a>
           {{#editable}}
-          <div class="sg-hidden-template" data-template-path="{{button-link.path}}">
-            {{{ button-link.value }}}
-          </div>
-          {{/editable}}
-          {{#editable}}
           <div class="sg-hidden-template">
             Button Destination Link:
             <span data-template-path="{{button-link.path}}"> {{{ button-link.value }}} </span>
@@ -228,8 +223,9 @@
           {{ text.value }}
         </a>
         {{#editable}}
-        <div class="sg-hidden-template" data-template-path="{{link.path}}">
-          {{{ link.value }}}
+        <div class="sg-hidden-template">
+          Button Destination Link:
+          <span data-template-path="{{link.path}}"> {{{ link.value }}} </span>
         </div>
         {{/editable}}
         {{/button}}
