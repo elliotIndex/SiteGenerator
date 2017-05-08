@@ -20,6 +20,14 @@ function togglePageEditable(viewportContext, templateItems) {
     templateItems.attr('contenteditable', function(_, trueOrFalse){
       return utils.cycle(trueOrFalse, ['true', 'false']);
     });
+
+    viewportContext.find('[contenteditable]').on('input', (e) => {
+      if (e.target.innerText.indexOf('\n') > -1) {
+        var target = viewportContext.find(e.target);
+        target.text(target.text().replace('\n', '').replace('<br>', ''));
+        target.blur();
+      }
+    });
   }
 }
 
