@@ -17,7 +17,17 @@ function viewportSetup() {
 
   $('#editable-toggle-btn').click(function() {
     viewportContext.find('.sg-hidden-template').toggle();
+
+    viewportContext.find('.portfolio-box').toggleClass('hover');
+    if ($(viewportContext.find('.portfolio-box')[0]).prop('tagName').toLowerCase() === 'a') {
+      utils.changeElementsTypes(viewportContext.find('.portfolio-box'), 'div');
+      viewportContext.find('.portfolio-box').toggleClass('inactive-link');
+    } else {
+      utils.changeElementsTypes(viewportContext.find('.portfolio-box'), 'a');
+    }
+
     viewportContext.find('a').toggleClass('inactive-link');
+
     $('#editable-toggle-btn').text(function(_, currentText) {
       return utils.cycle(currentText.trim(), ['Edit Mode', 'Presentation Mode']);
     });

@@ -181,14 +181,6 @@
         <div class="col-lg-4 col-sm-6">
           <a href="{{{ link.value }}}" class="portfolio-box" target="_parent">
             <img src="{{{ img.value }}}" class="img-responsive" alt="">
-            {{#editable}}
-            <div class="sg-hidden-template background-img-src">
-              Background Image source:
-              <span data-template-path="{{img.path}}">
-                {{{ img.value }}}
-              </span>
-            </div>
-            {{/editable}}
             <div class="portfolio-box-caption">
               <div class="portfolio-box-caption-content">
                 <div class="project-category text-faded" data-template-path="{{title.path}}">
@@ -198,8 +190,15 @@
                   {{ subtitle.value }}
                 </div>
                 {{#editable}}
-                <div class="sg-hidden-template" data-template-path="{{link.path}}">
-                  {{{ link.value }}}
+                <div class="sg-hidden-template">
+                  Background Image source:
+                  <span data-template-path="{{img.path}}"> {{{ img.value }}} </span>
+                </div>
+                {{/editable}}
+                {{#editable}}
+                <div class="sg-hidden-template">
+                  Destination Link:
+                  <span data-template-path="{{link.path}}"> {{{ link.value }}} </span>
                 </div>
                 {{/editable}}
               </div>

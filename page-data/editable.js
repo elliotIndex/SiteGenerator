@@ -6,7 +6,7 @@ module.exports = {
     "title": "Header Title",
   },
   "main": {
-    "img": "http://andrewpavlidis.com/wp-content/uploads/2014/10/08-201-page/18-IMG_48162_landscape_.jpg",
+    "img": "./img/header.jpg",
     "title": "Main Title",
     "subtitle": "This is the main subtitle. It could have a few words or it could have many words! It's all up to you, the page creator.",
     "button": "Main Button",

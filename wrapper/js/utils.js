@@ -25,7 +25,25 @@ function cycle(value, options) {
   return options[index]
 }
 
+function changeElementsTypes(elements, newType) {
+  $.each(elements, function(index, element) {
+    changeElementType($(element), newType);
+  });
+}
+
+function changeElementType(element, newType) {
+  var attrs = {};
+
+  $.each(element[0].attributes, function(idx, attr) {
+      attrs[attr.nodeName] = attr.nodeValue;
+  });
+  element.replaceWith(function() {
+      return $("<" + newType + "/>", attrs).append($(element).contents());
+  });
+}
+
 module.exports = {
   deepSet,
   cycle,
+  changeElementsTypes,
 }
