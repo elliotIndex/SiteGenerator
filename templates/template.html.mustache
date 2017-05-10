@@ -21,11 +21,15 @@
 
   <!-- Plugin CSS -->
   <link href="vendor/magnific-popup/magnific-popup.css" rel="stylesheet">
+  <link href="creative.min.css" rel="stylesheet" type="text/css">
 
-  <!-- Theme CSS -->
-  <link href="creative.min.css" rel="stylesheet">
 
   {{#editable}}
+  <!-- Dynamically generate page CSS from LESS -->
+  <!-- This will re-render when user changes primary theme -->
+  <link href="creative.less" rel="stylesheet/less" type="text/css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/less.js/2.7.2/less.min.js" type="text/javascript"></script>
+
   <!-- Template CSS -->
   <link href="template.min.css" rel="stylesheet">
   {{/editable}}
@@ -128,9 +132,13 @@
     <div class="container">
       <div class="row">
         <div class="col-lg-8 col-lg-offset-2 text-center">
-          <h2 class="section-heading" data-template-path="{{title.path}}">{{ title.value }}</h2>
+          <h2 class="section-heading" data-template-path="{{title.path}}">
+            {{ title.value }}
+          </h2>
           <hr class="light">
-          <p class="text-faded" data-template-path="{{text.path}}">{{ text.value }}</p>
+          <p class="text-faded" data-template-path="{{text.path}}">
+            {{ text.value }}
+          </p>
           <a id="{{button-link.path}}" href="{{{ button-link.value }}}" class="page-scroll btn btn-default btn-xl sr-button" data-template-path="{{button.path}}" target="_parent">
             {{ button.value }}
           </a>
@@ -138,6 +146,12 @@
           <div class="sg-hidden-template">
             Button Destination Link:
             <span class="sg-external-modifier" data-template-path="{{button-link.path}}"> {{{ button-link.value }}} </span>
+          </div>
+          {{/editable}}
+          {{#editable}}
+          <div class="sg-hidden-template">
+            Theme Color:
+            <span class="sg-external-modifier" data-template-path="{{theme-color.path}}"> {{{ theme-color.value }}} </span>
           </div>
           {{/editable}}
         </div>

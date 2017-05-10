@@ -8,6 +8,7 @@ var uglify = require('gulp-uglify');
 var concat = require('gulp-concat');
 var mustache = require('gulp-mustache');
 var browserify = require('gulp-browserify');
+var cssimport = require('gulp-cssimport');
 
 // var pageData = require('./page-data/context.js');
 // var pageData = require('./page-data/practicalGuide.js');
@@ -31,9 +32,16 @@ gulp.task('variables-less', function() {
     .pipe(browserSync.reload({stream: true}));
 });
 
+// Concat less files
+gulp.task('concat-less', ['variables-less'], function() {
+  return gulp.src("less/creative.less")
+    .pipe(cssimport({}))
+    .pipe(gulp.dest("dist"));
+});
+
 // Create css page for templating only
 gulp.task('template-less', function() {
-  return gulp.src('./less/template.less')
+  return gulp.src('./wrapper/less/template.less')
     .pipe(less())
     .pipe(gulp.dest('temp-css'))
     .pipe(browserSync.reload({stream: true}));
@@ -41,14 +49,14 @@ gulp.task('template-less', function() {
 
 // Create less for wrapper
 gulp.task('wrapper-less', function () {
-  return gulp.src('./less/wrapper.less')
+  return gulp.src('wrapper/less/wrapper.less')
     .pipe(less())
     .pipe(gulp.dest('temp-css'))
     .pipe(browserSync.reload({stream: true}));
 })
 
 // Compile LESS files from /less into /css
-gulp.task('less', ['variables-less', 'wrapper-less', 'template-less'], function() {
+gulp.task('less', ['concat-less', 'wrapper-less', 'template-less'], function() {
   return gulp.src('less/creative.less')
     .pipe(less())
     .pipe(gulp.dest('temp-css'))
