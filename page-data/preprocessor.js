@@ -1,4 +1,5 @@
-const pageData = require('./editable.js');
+// const pageData = require('./editable.js');
+const pageData = require('./dadJs.json');
 
 // Appends the path to each leaf adjacent to that leaf
 // input: mustache js object with all string leaves

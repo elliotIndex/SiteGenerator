@@ -157,6 +157,18 @@ gulp.task('build', [
   'copy'
 ]);
 
+// Build site to publish
+gulp.task('build-publish', [
+  'variables-less',
+  'less',
+  'template-html',
+  'minify-css',
+  'minify-js',
+  'concat-wrapper-js',
+  'copy'
+]);
+
+
 // Configure the browserSync task
 gulp.task('browserSync', function() {
   browserSync.init({

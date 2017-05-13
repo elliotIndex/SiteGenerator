@@ -14,4 +14,5 @@ module.exports = function(templateItems) {
     return utils.deepSet(out, templateItem.path, templateItem.text);
   }, {});
   console.log("output", output);
+  window.output = output;
 }
