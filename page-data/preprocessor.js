@@ -1,9 +1,25 @@
-// const pageData = require('./editable.js');
-const pageData = require('./dadJs.json');
+// File to process JSON page data into mustache/template readable objects
+
+// Initialize by gathering filename
+let fname = null;
+if (process.argv.includes('--fname')) {
+  fname = process.argv[process.argv.indexOf('--fname') + 1];
+}
+
+if (!fname) {
+  throw new Error('No filename provided');
+}
+
+const pageData = require(`./${fname}`);
+
+if (!pageData) {
+  throw new Error(`No file found with name ${fname}`);
+}
+
 
 // Appends the path to each leaf adjacent to that leaf
 // input: mustache js object with all string leaves
-// output: mustache js object with all string leaves, with half of the leaves as paths
+// output: mustache js object with all string leaves, with leaves containing parent paths
 // eg:
 //  input: { a: "b", c: { d: "e" } }
 //  output: { a: "b", "a-path": "a" c: { d: "e", "d-path": "c.d" } }
