@@ -4,50 +4,50 @@
   },
   "main":{
     "title":"Panda Print",
-    "subtitle":"Panda Print makes it fast and easy to print your favorite photos. Just send a picture message to (510) 917-5552 and we'll print it out and send it to you!",
-    "button":"request a quote",
+    "subtitle":"The fastest, easiest way to print your favorite photos. Just text us your pictures and we'll handle everything else.",
+    "button":"sign up now",
     "button-link":"http://www.google.com",
     "img":"http://i.imgur.com/STs0xEk.jpg"
   },
   "section-1":{
-    "header-link":"about us",
+    "header-link":"how it works",
     "title":"Print photos with just a text message",
-    "text":"Panda Print makes it fast and easy to print your favorite photos. Just send a picture message to (510) 917-5552 and we'll print it out and send it to you!",
-    "button":"Sign up now",
+    "text":"No downloading apps. No driving to the store. Just text messages to get high quality photos.",
+    "button":"give it a try",
     "button-link":"https://en.wikipedia.org/wiki/Mulan_(1998_film)"
   },
   "section-2":{
-    "header-link":"our principals",
-    "title":"Our Principals",
+    "header-link":"What We Offer",
+    "title":"High quality photos at a low price",
     "blobs":[
       {
-        "icon":"flask",
-        "title":"Test Equipment",
-        "text":"Cincinnati Test Systems"
-      },
-      {
-        "icon":"cogs",
-        "title":"Assembly Equipment",
-        "text":"Dukane I.A.S, ATC Automation"
-      },
-      {
-        "icon":"cubes",
-        "title":"Custom Components",
-        "text":"Harvey Vogel, Nelson-Miller, RTI Remmele Engineering, Lisi Medical, Scandic, Harmony Castings"
+        "icon":"comments",
+        "title":"Text Message Ordering",
+        "text":"Order your photos the same way you chat with your friends. No complicated apps or trips to Wallgreens."
       },
       {
         "icon":"diamond",
-        "title":"Post Processing",
-        "text":"Better Engineering, VACCO Industries"
+        "title":"Highest Quality Prints",
+        "text":"We use the most advanced wet-lab equipment in the world with silver halide photo prints on Fujifilm paper to deliver the best print quality possible"
+      },
+      {
+        "icon":"usd",
+        "title":"Lowest Prices Guarenteed",
+        "text":"We partner with the most efficient labs around the world so you save money on printing and shipping"
+      },
+      {
+        "icon":"truck",
+        "title":"Free Shipping",
+        "text":"Our photo packs come at a flat rate with shipping included"
       }
     ]
   },
   "section-3":{
-    "header-link":"what we offer",
+    "header-link":"why people love us",
     "blobs":[
       {
-        "title":"Leak testing",
-        "subtitle":"World-class leak detection systems and equipment from Cincinnati Test Systems",
+        "title":"Jenna R.",
+        "subtitle":"\"I casdfouldn't believe how simple it was to print my photos. I wish everything was as easy as Panda Print!\"",
         "img":"http://i.imgur.com/shy9jc8.jpg",
         "link":"http://www.google.com"
       },

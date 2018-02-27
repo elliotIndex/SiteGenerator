@@ -13,6 +13,7 @@ module.exports = function(templateItems) {
   var output = parsedTemplateItems.reduce(function(out, templateItem) {
     return utils.deepSet(out, templateItem.path, templateItem.text);
   }, {});
-  console.log("output", output);
+  console.log("window.output", output);
+  console.log("JSON output", JSON.stringify(output));
   window.output = output;
 }

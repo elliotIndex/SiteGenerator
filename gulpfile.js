@@ -11,12 +11,12 @@ var browserify = require('gulp-browserify');
 var cssimport = require('gulp-cssimport');
 var open = require('gulp-open');
 
-// var pageData = require('./page-data/context.js');
-// var pageData = require('./page-data/practicalGuide.js');
-var pageData = require('./page-data/preprocessor.js');
+var preprocessor = require('./page-data/preprocessor.js');
 
 // Fill out HTML template with page-data
 gulp.task('template-html', function() {
+  const pageData = preprocessor();
+
   return gulp.src('./templates/template.html.mustache')
     .pipe(mustache(pageData))
     .pipe(rename({extname: ''}))
@@ -26,6 +26,8 @@ gulp.task('template-html', function() {
 
 // Fill out CSS variables template with page-data
 gulp.task('variables-less', function() {
+  const pageData = preprocessor();
+  
   return gulp.src('./templates/variables.less.mustache')
     .pipe(mustache(pageData))
     .pipe(rename({extname: ''}))
@@ -190,6 +192,7 @@ gulp.task('dev', [
   'browserSync', 'build'
 ], function() {
   gulp.watch('page-data/*.js', ['template-html', 'minify-css']);
+  gulp.watch('page-data/*.json', ['template-html', 'minify-css']);
   gulp.watch('templates/template.html.mustache', ['template-html']);
   gulp.watch('templates/variables.less.mustache', ['variables-less']);
   gulp.watch('less/*.less', ['less']);

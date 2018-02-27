@@ -1,19 +1,22 @@
 // File to process JSON page data into mustache/template readable objects
+function preprocessArgedPage() {
 
-// Initialize by gathering filename
-let fname = null;
-if (process.argv.includes('--fname')) {
-  fname = process.argv[process.argv.indexOf('--fname') + 1];
-}
+  // Initialize by gathering filename
+  let fname = null;
+  if (process.argv.includes('--fname')) {
+    fname = process.argv[process.argv.indexOf('--fname') + 1];
+  }
 
-if (!fname) {
-  throw new Error('No filename provided');
-}
+  if (!fname) {
+    throw new Error('No filename provided');
+  }
 
-const pageData = require(`./${fname}`);
+  const pageData = require(`./${fname}`);
 
-if (!pageData) {
-  throw new Error(`No file found with name ${fname}`);
+  if (!pageData) {
+    throw new Error(`No file found with name ${fname}`);
+  }
+  return appendLeafPaths(pageData);
 }
 
 // Appends the path to each leaf adjacent to that leaf
@@ -44,4 +47,4 @@ function appendLeafPaths(muObj, path = '') {
 console.assert(JSON.stringify(appendLeafPaths({ a: "b", c: { d: "e" } }))
   === JSON.stringify({"a":{"value":"b","path":"a"},"c":{"d":{"value":"e","path":"c.d"}}}));
 
-module.exports = appendLeafPaths(pageData);
+module.exports = preprocessArgedPage;
