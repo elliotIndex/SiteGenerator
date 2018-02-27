@@ -16,7 +16,6 @@ if (!pageData) {
   throw new Error(`No file found with name ${fname}`);
 }
 
-
 // Appends the path to each leaf adjacent to that leaf
 // input: mustache js object with all string leaves
 // output: mustache js object with all string leaves, with leaves containing parent paths
