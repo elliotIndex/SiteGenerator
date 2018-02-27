@@ -9,6 +9,7 @@ var concat = require('gulp-concat');
 var mustache = require('gulp-mustache');
 var browserify = require('gulp-browserify');
 var cssimport = require('gulp-cssimport');
+var open = require('gulp-open');
 
 // var pageData = require('./page-data/context.js');
 // var pageData = require('./page-data/practicalGuide.js');
@@ -165,7 +166,8 @@ gulp.task('build-publish', [
   'minify-css',
   'minify-js',
   'concat-wrapper-js',
-  'copy'
+  'copy',
+  'open-template'
 ]);
 
 
@@ -176,7 +178,12 @@ gulp.task('browserSync', function() {
       baseDir: 'dist'
     }
   })
-})
+});
+
+gulp.task('open-template', function(){
+  gulp.src('dist/template.html')
+    .pipe(open());
+});
 
 // Dev task with browserSync
 gulp.task('dev', [
