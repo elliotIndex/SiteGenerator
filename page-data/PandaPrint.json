@@ -2,6 +2,13 @@
   "header":{
     "title":"Panda Print"
   },
+  "main":{
+    "title":"Panda Print",
+    "subtitle":"Panda Print makes it fast and easy to print your favorite photos. Just send a picture message to (510) 917-5552 and we'll print it out and send it to you!",
+    "button":"request a quote",
+    "button-link":"http://www.google.com",
+    "img":"http://i.imgur.com/STs0xEk.jpg"
+  },
   "section-1":{
     "header-link":"about us",
     "title":"Print photos with just a text message",
@@ -94,13 +101,6 @@
         "text":"Avocet Sales & Marketing, Inc., 737 2nd Street, Suite 305, Oakland, California 94607"
       }
     ]
-  },
-  "main":{
-    "title":"Avocet Sales & marketing",
-    "subtitle":"Supplying Northern California and Nevada with high end components, automation, and test equipment from around the world",
-    "button":"request a quote",
-    "button-link":"http://www.google.com",
-    "img":"http://i.imgur.com/STs0xEk.jpg"
   },
   "theme-color":"#39ADD1",
   "section-4":{
