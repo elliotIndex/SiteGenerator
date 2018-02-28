@@ -247,7 +247,7 @@
     <div class="container text-center">
       <div class="call-to-action">
         <h2 data-template-path="{{title.path}}">{{ title.value }}</h2>
-        <p data-template-path="{{subtitle.path}}">{{ subtitle.value }}</p>
+        <p class="text-muted" data-template-path="{{subtitle.path}}">{{ subtitle.value }}</p>
         {{#button}}
         <a id="button-link.path" href="{{{ button-link.value }}}" class="btn btn-default btn-xl sr-button page-scroll" data-template-path="{{text.path}}" target="_parent" target="_parent">
           {{ text.value }}
@@ -273,6 +273,65 @@
           <hr class="primary">
           <p data-template-path="{{subtitle.path}}">{{ subtitle.value }}</p>
         </div>
+
+        <form name="signup" method="POST" netlify>
+          <p>
+            <h4>Profile</h4>
+            <label>First Name <input type="text" name="first-name"></label>
+            <label>Last Name <input type="text" name="last-name"></label>
+            <label>Phone <input type="phone" name="phone"></label>
+            <label>Email <input type="email" name="email"></label>
+          </p>
+          <p>
+            <h4>Shipping Address</h4>
+            <label>Street Address <input type="text" name="shipping-street-address-1"></label>
+            <label>Address Line 2<input type="text" name="shipping-street-address-2"></label>
+            <label>City<input type="text" name="shipping-city"></label>
+            <label>State<input type="text" name="shipping-state"></label>
+            <label>Zip Code<input type="number" name="shipping-zip-code"></label>
+          </p>
+          <p>
+            <h4>Billing Info</h4>
+            <label>Name on Card <input type="text" name="billing-name"></label>
+            <label>Card Number<input type="text" name="billin-card-num"></label>
+            <label>Expiration Month
+              <select name="billing-exp-month">
+                <option value="01">01</option>
+                <option value="02">02</option>
+                <option value="03">03</option>
+                <option value="04">04</option>
+                <option value="05">05</option>
+                <option value="06">06</option>
+                <option value="07">07</option>
+                <option value="08">08</option>
+                <option value="09">09</option>
+                <option value="10">10</option>
+                <option value="11">11</option>
+                <option value="12">12</option>
+              </select>
+            </label>
+            <label>Year
+              <select name="billing-exp-year">
+                <option value="2018">2018</option>
+                <option value="2019">2019</option>
+                <option value="2020">2020</option>
+                <option value="2021">2021</option>
+                <option value="2022">2022</option>
+                <option value="2023">2023</option>
+                <option value="2024">2024</option>
+                <option value="2025">2025</option>
+                <option value="2026">2026</option>
+                <option value="2027">2027</option>
+                <option value="2028">2028</option>
+              </select>
+            </label>
+            <label>Security Code<input type="text" name="billin-security-code"></label>
+          </p>
+
+          <p>
+            <button type="submit">Send</button>
+          </p>
+        </form>
 
         {{#contacts}}
         <div class="col-lg-4 text-center">
