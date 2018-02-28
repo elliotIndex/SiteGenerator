@@ -209,7 +209,7 @@
 
         {{#blobs}}
         <div class="col-lg-4 col-sm-6">
-          <a id="{{link.path}}" href="{{{ link.value }}}" class="portfolio-box" target="_parent">
+          <div id="{{link.path}}" class="portfolio-box" target="_parent">
             <img id="{{img.path}}" src="{{{ img.value }}}" class="img-responsive" alt="">
             <div class="portfolio-box-caption">
               <div class="portfolio-box-caption-content">
@@ -233,7 +233,7 @@
                 {{/editable}}
               </div>
             </div>
-          </a>
+          </div>
         </div>
         {{/blobs}}
 
