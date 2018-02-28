@@ -6,7 +6,7 @@
     "title":"Panda Print",
     "subtitle":"The fastest, easiest way to print your favorite photos. Just text us your pictures and we'll handle everything else.",
     "button":"sign up now",
-    "button-link":"#section-5",
+    "button-link":"#section-form",
     "img":"https://i.imgur.com/tksASKd.jpg",
     "darkness":"0.6"
   },
@@ -15,7 +15,7 @@
     "title":"Print photos with just a text message",
     "text":"No downloading apps. No driving to the store. Just text messages to get high quality photos.",
     "button":"give it a try",
-    "button-link":"#section-5"
+    "button-link":"#section-form"
   },
   "section-2":{
     "header-link":"What We Offer",
@@ -109,7 +109,7 @@
     "subtitle":"Our photo packs cost just $7.99 for up to 10 photos. To save you money, we'll wait until you have 10 photos in your order before printing and shipping. You can always ship earlier by sending us a message.",
     "button":{
       "text":"Try it today",
-      "button-link":"#section-5"
+      "button-link":"#section-form"
     }
   }
 }

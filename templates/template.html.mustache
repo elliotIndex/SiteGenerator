@@ -247,7 +247,7 @@
     <div class="container text-center">
       <div class="call-to-action">
         <h2 data-template-path="{{title.path}}">{{ title.value }}</h2>
-        <p class="text-muted" data-template-path="{{subtitle.path}}">{{ subtitle.value }}</p>
+        <p class="text-faded" data-template-path="{{subtitle.path}}">{{ subtitle.value }}</p>
         {{#button}}
         <a id="button-link.path" href="{{{ button-link.value }}}" class="btn btn-default btn-xl sr-button page-scroll" data-template-path="{{text.path}}" target="_parent" target="_parent">
           {{ text.value }}
@@ -450,8 +450,8 @@
               <input required type="number" name="billing-security-code" class="form-control">
             </div>
           </div>
-          <div class="form-row text-center">
-            <button type="submit" class="btn btn-primary btn-xl">Submit</button>
+          <div class="ep-clearfix text-center">
+            <button type="submit" class="btn btn-primary btn-xl ep-submit-btn">Submit</button>
           <div>
           </div>
         </form>
