@@ -249,13 +249,13 @@
         <h2 data-template-path="{{title.path}}">{{ title.value }}</h2>
         <p data-template-path="{{subtitle.path}}">{{ subtitle.value }}</p>
         {{#button}}
-        <a id="link.path" href="{{{ link.value }}}" class="btn btn-default btn-xl sr-button" data-template-path="{{text.path}}" target="_parent" target="_parent">
+        <a id="button-link.path" href="{{{ button-link.value }}}" class="btn btn-default btn-xl sr-button page-scroll" data-template-path="{{text.path}}" target="_parent" target="_parent">
           {{ text.value }}
         </a>
         {{#editable}}
         <div class="sg-hidden-template">
           Button Destination Link:
-          <span class="sg-external-modifier" data-template-path="{{link.path}}"> {{{ link.value }}} </span>
+          <span class="sg-external-modifier" data-template-path="{{button-link.path}}"> {{{ button-link.value }}} </span>
         </div>
         {{/editable}}
         {{/button}}
