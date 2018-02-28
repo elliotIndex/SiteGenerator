@@ -186,7 +186,7 @@ gulp.task('publish-template', ['build'], function(){
     'dist/creative.min.js',
     'dist/template.min.css',
     'dist/vendor',
-    'panda/ThankYou.html'
+    'panda/*.html'
   ])
     .pipe(gulp.dest('publish'))
 
