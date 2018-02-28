@@ -35,11 +35,6 @@
         "icon":"usd",
         "title":"Lowest Prices Guarenteed",
         "text":"We partner with the most efficient labs around the world so you save money on printing and shipping"
-      },
-      {
-        "icon":"truck",
-        "title":"Free Shipping",
-        "text":"Our photo packs come at a flat rate with shipping included"
       }
     ]
   },
@@ -87,7 +82,7 @@
   "section-5":{
     "header-link":"sign up",
     "title":"Sign up for free",
-    "subtitle":"Located in the San Francisco Bay Area, Avocet provides companies in Northern California and Nevada the engineering solutions they need from suppliers around the world.",
+    "subtitle":"Once you've set up a profile, you can start printing pictures",
     "contacts":[
       {
         "icon":"phone",
