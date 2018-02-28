@@ -7,7 +7,8 @@
     "subtitle":"The fastest, easiest way to print your favorite photos. Just text us your pictures and we'll handle everything else.",
     "button":"sign up now",
     "button-link":"http://www.google.com",
-    "img":"http://i.imgur.com/STs0xEk.jpg"
+    "img":"https://i.imgur.com/tksASKd.jpg",
+    "darkness":"0.6"
   },
   "section-1":{
     "header-link":"how it works",
@@ -104,9 +105,11 @@
   },
   "theme-color":"#39ADD1",
   "section-4":{
-    "title":"Find out what we can do for you!",
+    "header-link":"pricing",
+    "title":"Easy pricing for easy pictures",
+    "subtitle":"Our photo packs cost just $7.99 for up to 10 photos. To save you money, we'll wait until you have 10 photos in your order before printing and shipping. You can always ship earlier by just sending us a message.",
     "button":{
-      "text":"Request a quote",
+      "text":"Try it today",
       "link":"http://www.google.com"
     }
   }

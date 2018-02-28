@@ -84,6 +84,14 @@
             </li>
           {{/section-3.header-link}}
 
+          {{#section-4.header-link}}
+            <li>
+              <a class="page-scroll" href="#section-4" data-template-path="{{section-4.header-link.path}}">
+                {{ section-4.header-link.value }}
+              </a>
+            </li>
+          {{/section-4.header-link}}
+
           {{#section-5.header-link}}
             <li>
               <a class="page-scroll" href="#section-5" data-template-path="{{section-5.header-link.path}}">
@@ -99,7 +107,7 @@
   </nav>
 
   {{#main}}
-    <header id="{{img.path}}" style="background-image: linear-gradient( rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3) ), url('{{{ img.value }}}')">
+    <header id="{{img.path}}" style="background-image: linear-gradient( rgba(0, 0, 0, {{darkness.value}}), rgba(0, 0, 0, {{darkness.value}}) ), url('{{{ img.value }}}')">
       <div class="header-content">
         <div class="header-content-inner">
           <h1 id="homeHeading" data-template-path="{{title.path}}">{{ title.value }}</h1>
@@ -235,10 +243,11 @@
   {{/section-3}}
 
   {{#section-4}}
-  <aside class="bg-dark">
+  <aside id="section-4" class="bg-dark">
     <div class="container text-center">
       <div class="call-to-action">
         <h2 data-template-path="{{title.path}}">{{ title.value }}</h2>
+        <p data-template-path="{{subtitle.path}}">{{ subtitle.value }}</p>
         {{#button}}
         <a id="link.path" href="{{{ link.value }}}" class="btn btn-default btn-xl sr-button" data-template-path="{{text.path}}" target="_parent" target="_parent">
           {{ text.value }}

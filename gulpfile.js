@@ -27,7 +27,7 @@ gulp.task('template-html', function() {
 // Fill out CSS variables template with page-data
 gulp.task('variables-less', function() {
   const pageData = preprocessor();
-  
+
   return gulp.src('./templates/variables.less.mustache')
     .pipe(mustache(pageData))
     .pipe(rename({extname: ''}))
@@ -172,6 +172,17 @@ gulp.task('build-publish', [
   'open-template'
 ]);
 
+// Build dist folder
+gulp.task('build-template', [
+  'variables-less',
+  'less',
+  'template-html',
+  'minify-css',
+  'minify-js',
+  'copy'
+]);
+
+
 
 // Configure the browserSync task
 gulp.task('browserSync', function() {
@@ -179,7 +190,7 @@ gulp.task('browserSync', function() {
     server: {
       baseDir: 'dist'
     }
-  })
+  });
 });
 
 gulp.task('open-template', function(){
