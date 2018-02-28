@@ -92,13 +92,13 @@
             </li>
           {{/section-4.header-link}}
 
-          {{#section-5.header-link}}
+          {{#section-form.header-link}}
             <li>
-              <a class="page-scroll" href="#section-5" data-template-path="{{section-5.header-link.path}}">
-                {{ section-5.header-link.value }}
+              <a class="page-scroll" href="#section-form" data-template-path="{{section-form.header-link.path}}">
+                {{ section-form.header-link.value }}
               </a>
             </li>
-          {{/section-5.header-link}}
+          {{/section-form.header-link}}
         </ul>
       </div>
       <!-- /.navbar-collapse -->
@@ -264,7 +264,16 @@
   </aside>
   {{/section-4}}
 
+  {{#section-form}}
+
   <section id="section-form">
+    <div class="container">
+      <div class="center-block text-center">
+        <h2 class="section-heading" data-template-path="{{title.path}}"> {{ title.value }}</h2>
+        <hr class="primary">
+        <p data-template-path="{{subtitle.path}}">{{ subtitle.value }}</p>
+      </div>
+    </div>
     <div class="container">
       <div class="row">
         <form name="signup" method="POST" netlify>
@@ -449,19 +458,20 @@
       </div>
     </div>
   </section>
+  {{/section-form}}
 
   {{#section-5}}
-  <section id="section-5">
+  <section id="section-5" class="bg-dark">
     <div class="container">
       <div class="row">
         <div class="center-block text-center">
           <h2 class="section-heading" data-template-path="{{title.path}}"> {{ title.value }}</h2>
-          <hr class="primary">
-          <p data-template-path="{{subtitle.path}}">{{ subtitle.value }}</p>
+          <hr class="light">
+          <p class="text-faded" data-template-path="{{subtitle.path}}">{{ subtitle.value }}</p>
         </div>
 
         {{#contacts}}
-        <div class="col-lg-4 text-center">
+        <div class="col-sm-4 text-center service-box">
           {{#editable}}
           <div class="sg-hidden-template">
             Icon Type:
@@ -469,7 +479,7 @@
           </div>
           {{/editable}}
           <i id="{{icon.path}}" class="fa fa-{{ icon.value }} fa-3x sr-contact"></i>
-          <p data-template-path="{{text.path}}">{{{ text.value }}}</p>
+          <p class="text-faded" data-template-path="{{text.path}}">{{{ text.value }}}</p>
         </div>
         {{/contacts}}
       </div>
