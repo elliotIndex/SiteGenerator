@@ -156,7 +156,7 @@ gulp.task('build', [
   'template-html',
   'minify-css',
   'minify-js',
-  'concat-wrapper-js',
+  // 'concat-wrapper-js',
   'copy'
 ]);
 
