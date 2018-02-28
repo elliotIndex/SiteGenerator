@@ -160,29 +160,6 @@ gulp.task('build', [
   'copy'
 ]);
 
-// Build site to publish
-gulp.task('build-publish', [
-  'variables-less',
-  'less',
-  'template-html',
-  'minify-css',
-  'minify-js',
-  'concat-wrapper-js',
-  'copy',
-  'open-template'
-]);
-
-// Build dist folder
-gulp.task('build-template', [
-  'variables-less',
-  'less',
-  'template-html',
-  'minify-css',
-  'minify-js',
-  'copy'
-]);
-
-
 
 // Configure the browserSync task
 gulp.task('browserSync', function() {
@@ -197,6 +174,22 @@ gulp.task('open-template', function(){
   gulp.src('dist/template.html')
     .pipe(open());
 });
+
+// Move the completed template into the publish folder
+gulp.task('publish-template', ['build'], function(){
+  gulp.src(['dist/template.html'])
+    .pipe(rename({basename: 'index'}))
+    .pipe(gulp.dest('publish'));
+
+  gulp.src([
+    'dist/creative.min.css',
+    'dist/creative.min.js',
+    'dist/template.min.css',
+    'dist/vendor/*'
+  ])
+    .pipe(gulp.dest('publish'))
+});
+
 
 // Dev task with browserSync
 gulp.task('dev', [
