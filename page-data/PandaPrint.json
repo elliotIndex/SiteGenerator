@@ -13,7 +13,7 @@
   "section-1":{
     "header-link":"how it works",
     "title":"Print photos with just a text message",
-    "text":"No downloading apps. No driving to the store. Just text messages to get high quality photos.",
+    "text":"No downloading apps. No driving to the store. Just text messages to get high quality photos",
     "button":"give it a try",
     "button-link":"#section-form"
   },
@@ -24,12 +24,12 @@
       {
         "icon":"comments",
         "title":"Text Message Ordering",
-        "text":"Order your photos the same way you chat with your friends. No complicated apps or trips to Wallgreens."
+        "text":"Order your photos the same way you chat with your friends. No complicated apps or trips to Wallgreens"
       },
       {
         "icon":"diamond",
         "title":"Highest Quality Prints",
-        "text":"We use the most advanced wet-lab equipment in the world with silver halide photo prints on Fujifilm paper to deliver the best print quality possible"
+        "text":"We use the most advanced wet-lab equipment in the world with silver halide prints on Fujifilm paper to deliver the best print quality possible"
       },
       {
         "icon":"usd",
